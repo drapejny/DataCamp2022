@@ -1,0 +1,9 @@
+BEGIN
+    pkg_load_calendar.load_cls_calendar;
+    pkg_load_calendar.load_t_days;
+    pkg_load_calendar.load_t_weeks;
+    pkg_load_calendar.load_t_months;
+    pkg_load_calendar.load_t_quarters;
+    pkg_load_calendar.load_t_years;
+END;
+/
