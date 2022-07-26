@@ -1,0 +1,125 @@
+--========================
+-- Storage Level
+--========================
+CREATE TABLESPACE ts_sa_customers_data_01
+DATAFILE '/oracle/u02/oradata/ASlizhdb/ts_sa_customers_data_01.dat'
+SIZE 150M
+AUTOEXTEND ON NEXT 50M
+SEGMENT SPACE MANAGEMENT AUTO;
+
+CREATE USER SA_CUSTOMERS
+IDENTIFIED BY "%PWD%"
+DEFAULT TABLESPACE ts_sa_customers_data_01;
+
+GRANT CONNECT, RESOURCE TO SA_CUSTOMERS;
+
+CREATE TABLESPACE ts_sa_products_data_01
+DATAFILE '/oracle/u02/oradata/ASlizhdb/ts_sa_products_data_01.dat'
+SIZE 150M
+AUTOEXTEND ON NEXT 50M
+SEGMENT SPACE MANAGEMENT AUTO;
+
+CREATE USER SA_PRODUCTS
+IDENTIFIED BY "%PWD%"
+DEFAULT TABLESPACE ts_sa_products_data_01;
+
+GRANT CONNECT, RESOURCE TO SA_PRODUCTS;
+
+--========================
+-- DW Cleansing Level
+--========================
+CREATE TABLESPACE ts_dw_cl_01
+DATAFILE '/oracle/u02/oradata/ASlizhdb/ts_dw_cl_01.dat'
+SIZE 150M
+AUTOEXTEND ON NEXT 50M
+SEGMENT SPACE MANAGEMENT AUTO;
+
+CREATE USER DW_CL
+IDENTIFIED BY "%PWD%"
+DEFAULT TABLESPACE ts_dw_cl_01;
+
+GRANT CONNECT, CREATE VIEW, RESOURCE TO DW_CL;
+
+--========================
+-- DW Level
+--========================
+CREATE TABLESPACE ts_dw_data_01
+DATAFILE '/oracle/u02/oradata/ASlizhdb/ts_dw_data_01.dat'
+SIZE 150M
+AUTOEXTEND ON NEXT 50M
+SEGMENT SPACE MANAGEMENT AUTO;
+
+CREATE USER DW_DATA
+IDENTIFIED BY "%PWD%"
+DEFAULT TABLESPACE ts_dw_data_01;
+
+GRANT CONNECT, RESOURCE TO DW_DATA;
+
+--========================
+-- DW Prepare Star Cleansing Level
+--========================
+CREATE TABLESPACE ts_dw_cl_01
+DATAFILE '/oracle/u02/oradata/ASlizhdb/ts_dw_cl_01.dat'
+SIZE 150M
+AUTOEXTEND ON NEXT 50M
+SEGMENT SPACE MANAGEMENT AUTO;
+
+CREATE USER SAL_DW_CL
+IDENTIFIED BY "%PWD%"
+DEFAULT TABLESPACE ts_dw_cl_01;
+
+GRANT CONNECT, CREATE VIEW, RESOURCE TO SAL_DW_CL;
+
+--========================
+-- Star Cleansin Level
+--========================
+CREATE TABLESPACE ts_sal_cl_01
+DATAFILE '/oracle/u02/oradata/ASlizhdb/ts_sal_cl_01.dat'
+SIZE 150M
+AUTOEXTEND ON NEXT 50M
+SEGMENT SPACE MANAGEMENT AUTO;
+
+CREATE USER SAL_CL
+IDENTIFIED BY "%PWD%"
+DEFAULT TABLESPACE ts_sal_cl_01;
+
+GRANT CONNECT, CREATE VIEW, RESOURCE TO SAL_CL;
+
+--========================
+-- Star Level
+--========================
+CREATE TABLESPACE ts_sa_fct_sales_01
+DATAFILE '/oracle/u02/oradata/ASlizhdb/ts_sa_fct_sales_01.dat'
+SIZE 150M
+AUTOEXTEND ON NEXT 50M
+SEGMENT SPACE MANAGEMENT AUTO;
+
+CREATE USER DM_SALES
+IDENTIFIED BY "%PWD%"
+DEFAULT TABLESPACE ts_sa_fct_sales_01;
+
+GRANT CONNECT, CREATE VIEW, RESOURCE TO DM_SALES;
+
+CREATE TABLESPACE ts_sa_dim_customers_01
+DATAFILE '/oracle/u02/oradata/ASlizhdb/ts_sa_dim_customers_01.dat'
+SIZE 150M
+AUTOEXTEND ON NEXT 50M
+SEGMENT SPACE MANAGEMENT AUTO;
+
+CREATE USER DM_CUSTOMERS
+IDENTIFIED BY "%PWD%"
+DEFAULT TABLESPACE ts_sa_dim_customers_01;
+
+GRANT CONNECT, CREATE VIEW, RESOURCE TO DM_CUSTOMERS;
+
+CREATE TABLESPACE ts_sa_dim_products_01
+DATAFILE '/oracle/u02/oradata/ASlizhdb/ts_sa_dim_products_01.dat'
+SIZE 150M
+AUTOEXTEND ON NEXT 50M
+SEGMENT SPACE MANAGEMENT AUTO;
+
+CREATE USER DM_PRODUCTS
+IDENTIFIED BY "%PWD%"
+DEFAULT TABLESPACE ts_sa_dim_products_01;
+
+GRANT CONNECT, CREATE VIEW, RESOURCE TO DM_PRODUCTS;
