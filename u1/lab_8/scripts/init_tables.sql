@@ -60,11 +60,14 @@ create table DIM_GEO_LOCATION (
 ) tablespace ts_sa_dim_products_01;
 
 /*==============================================================*/
-/* Table: DIM_PRODUCT                                           */
+/* Table: DIM_PRODUCT_SCD                                       */
 /*==============================================================*/
-create table DIM_PRODUCT (
+create table DIM_PRODUCT_SCD (
    "product_id"         NUMBER                not null,
    "sku_num"            VARCHAR2(50 CHAR),
+   "eff_time"           DATE,
+   "exp_time"           DATE,
+   "price"              NUMBER,
    "description"        VARCHAR2(100 CHAR),
    "type"               VARCHAR2(25 CHAR),
    "brand"              VARCHAR2(80 CHAR),
@@ -78,8 +81,8 @@ create table DIM_PRODUCT (
    "package_reusable"   VARCHAR2(50 CHAR),
    "taste"              VARCHAR2(80 CHAR),
    "alcohol"            NUMBER,
-   constraint PK_DIM_PRODUCT primary key ("product_id")
-)tablespace ts_sa_dim_products_01;
+   constraint PK_DIM_PRODUCT_SCD primary key ("product_id")
+) tablespace ts_sa_dim_products_01;
 
 /*==============================================================*/
 /* Table: DIM_STORE                                             */
