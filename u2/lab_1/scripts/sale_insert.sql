@@ -12,7 +12,7 @@
                 p.price AS price,
                 to_char(a.date_id, 'YYYY') || to_char(a.date_id, 'MM') || to_char(a.date_id, 'DD') || to_char(a.customer_id, 'fm0000') || to_char(a.store_id, 'fm00') AS pos_transaction
          FROM
-            (SELECT (to_date('12/31/2021', 'MM/DD/YYYY') + dbms_random.value(1, 31)) AS date_id,
+            (SELECT (to_date('12/31/2020', 'MM/DD/YYYY') + TRUNC(dbms_random.value(1, 575))) AS date_id,
                     TRUNC(dbms_random.value(1, 81)) AS product_id,
                     TRUNC(dbms_random.value(1, 17)) AS store_id,
                     TRUNC(dbms_random.value(1, 6401)) AS customer_id
