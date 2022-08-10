@@ -1,3 +1,4 @@
+ALTER SESSION SET CURRENT_SCHEMA = dw_cl;
 BEGIN
     pkg_load_products.load_products;
     pkg_load_stores.load_stores;
