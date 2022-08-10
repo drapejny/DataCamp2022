@@ -24,7 +24,7 @@ AS
         LOOP
             FETCH c
             BULK COLLECT INTO sales;
-            FORALL i IN 1..sales.COUNT()
+            FORALL i IN 1 .. sales.COUNT()
                 INSERT INTO dw_cl_sale_data VALUES sales(i);
 EXIT WHEN c%NOTFOUND;
 END LOOP;
