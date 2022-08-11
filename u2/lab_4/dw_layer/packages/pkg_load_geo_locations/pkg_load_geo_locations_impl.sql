@@ -11,10 +11,9 @@ IS
                     cnt_gr.group_desc,
                     cnt_sub_gr.sub_group_id,
                     cnt_sub_gr.sub_group_desc,
-                    gs.geo_system_code,
-                    gs.geo_system_desc,
-                    reg.region_id,
-                    reg.region_desc
+                    gs.geo_system_code AS system_code,
+                    gs.geo_system_desc AS system_desc,
+                    reg.region_desc,
                     cnt.country_code_a2,
                     cnt.country_code_a3,
                     cnt.region_desc AS country_desc,
@@ -49,27 +48,29 @@ IS
             LEFT JOIN u_dw_references.cu_cntr_sub_groups cnt_sub_gr
             ON (geo.country_sub_group_geo_id = cnt_sub_gr.geo_id )
             LEFT JOIN u_dw_references.cu_geo_systems gs
-            ON (geo.system_geo_id = gs.geo_id);
+            ON (geo.system_geo_id = gs.geo_id)
+            LEFT JOIN dw_data.dw_geo_location_data dw
+            ON geo.country_geo_id = dw.geo_id
+            WHERE dw.geo_id IS NULL;
 
     BEGIN
         FOR i IN c LOOP
-            IF i.geo_id NOT IN (SELECT geo_id FROM dw_data.dw_geo_location) THEN
-                INSERT INTO dw_data.dw_geo_location
-                                (   
-                                    geo_id,     
-                                    group_id,    
-                                    group_desc,    
-                                    sub_group_id,
-                                    sub_group_desc,
-                                    system_code, 
-                                    system_desc,   
-                                    region_desc,   
-                                    country_code_a2,
-                                    country_code_a3,
-                                    country_desc,  
-                                    part_id,     
-                                    part_desc     
-                                )
+            INSERT INTO dw_data.dw_geo_location_data
+                            (   
+                               geo_id,     
+                               group_id,    
+                               group_desc,    
+                               sub_group_id,
+                               sub_group_desc,
+                               system_code, 
+                               system_desc,   
+                               region_desc,   
+                               country_code_a2,
+                               country_code_a3,
+                               country_desc,  
+                               part_id,     
+                               part_desc     
+                            )
                         VALUES
                             (
                                 i.geo_id,        
@@ -86,9 +87,8 @@ IS
                                 i.part_id,    
                                 i.part_desc
                             );
-            END IF;
             EXIT WHEN c%NOTFOUND;
         END LOOP;
         COMMIT;
-    END load_stores;
-END pkg_load_stores;
+    END load_geo_locations;
+END pkg_load_geo_locations;
