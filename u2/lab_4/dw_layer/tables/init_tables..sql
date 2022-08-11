@@ -78,24 +78,45 @@ CREATE SEQUENCE dw_data.seq_customers
 DROP TABLE dw_data.dw_date_data;
 CREATE TABLE dw_data.dw_date_data
 (
-    date_id DATE,
-    day_name VARCHAR2(44),
-    day_number_in_week VARCHAR2(1 BYTE),
-    day_number_in_month VARCHAR2(2 BYTE),
-    day_number_in_year VARCHAR2(3 BYTE),
-    calendar_week_number VARCHAR2(1 BYTE),  
-    week_ending_date DATE,
-    calendar_month_number VARCHAR2(2 BYTE),
-    days_in_cal_month VARCHAR2(2 BYTE),
-    end_of_cal_month DATE,
-    calendar_month_name VARCHAR2(32 BYTE), 
-    days_in_cal_quarter NUMBER,
-    beg_of_cal_quarter DATE, 
-    end_of_cal_quarter DATE,
-    calendar_quarter_number VARCHAR2(1 BYTE),
-    calendar_year VARCHAR2(4 BYTE),
-    days_in_cal_year NUMBER,
-    beg_of_cal_year DATE,
-    end_of_cal_year DATE,
+    date_id DATE NOT NULL,
+    day_name VARCHAR2(44) NOT NULL,
+    day_number_in_week VARCHAR2(1 BYTE) NOT NULL,
+    day_number_in_month VARCHAR2(2 BYTE) NOT NULL,
+    day_number_in_year VARCHAR2(3 BYTE) NOT NULL,
+    calendar_week_number VARCHAR2(1 BYTE) NOT NULL,
+    week_ending_date DATE NOT NULL,
+    calendar_month_number VARCHAR2(2 BYTE) NOT NULL,
+    days_in_cal_month VARCHAR2(2 BYTE) NOT NULL,
+    end_of_cal_month DATE NOT NULL,
+    calendar_month_name VARCHAR2(32 BYTE) NOT NULL,
+    days_in_cal_quarter NUMBER NOT NULL,
+    beg_of_cal_quarter DATE NOT NULL,
+    end_of_cal_quarter DATE NOT NULL,
+    calendar_quarter_number VARCHAR2(1 BYTE) NOT NULL,
+    calendar_year VARCHAR2(4 BYTE) NOT NULL,
+    days_in_cal_year NUMBER NOT NULL,
+    beg_of_cal_year DATE NOT NULL,
+    end_of_cal_year DATE NOT NULL,
     CONSTRAINT PK_DW_DATE_DATA PRIMARY KEY (date_id)
+) TABLESPACE ts_dw_data_01;
+
+--=================================
+-- DW_GEO_LOCATION_DATA
+--=================================
+DROP TABLE dw_data.dw_geo_location_data;
+CREATE TABLE dw_data.dw_geo_location_data (
+   geo_id          NUMBER NOT NULL,
+   group_id        NUMBER(22,0),
+   group_desc      VARCHAR2(200),
+   sub_group_id    NUMBER(22,0),
+   sub_group_desc  VARCHAR2(200),
+   system_code     VARCHAR2(30 CHAR),
+   system_desc     VARCHAR2(200),
+   region_desc     VARCHAR2(200),
+   country_code_a2  VARCHAR2(30 CHAR),
+   country_code_a3  VARCHAR2(30 CHAR),
+   country_desc    VARCHAR2(200) NOT NULL,
+   part_id         NUMBER(22,0),
+   part_desc       VARCHAR2(200),
+   CONSTRAINT PK_DIM_GEO_LOCATION_DATA PRIMARY KEY (geo_id)
 ) TABLESPACE ts_dw_data_01;
