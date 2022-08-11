@@ -1,6 +1,7 @@
 --================================
 -- DW_STORE_DATA
 --================================
+DROP TABLE dw_data.dw_sale_data;
 DROP TABLE dw_data.dw_store_data;
 CREATE TABLE dw_data.dw_store_data
 (
@@ -121,3 +122,39 @@ CREATE SEQUENCE dw_data.seq_products
     START WITH 1
     INCREMENT BY 1
     NOCYCLE;
+
+--===================================
+-- DW_SALE_DATA
+--==================================
+CREATE TABLE dw_data.dw_sale_data
+(
+   sale_id            NUMBER,
+   date_id            DATE,
+   product_id         NUMBER,
+   customer_id        NUMBER,
+   store_id           NUMBER,
+   geo_id             NUMBER,
+   amount             NUMBER(5),
+   pos_transaction    VARCHAR2(20 CHAR),
+   CONSTRAINT PK_DW_SALE_DATA PRIMARY KEY (sale_id)
+);
+
+ALTER TABLE dw_data.dw_sale_data
+   ADD CONSTRAINT FK_DW_DATE_DATA foreign key (date_id)
+      REFERENCES dw_data.dw_date_data (date_id);
+
+ALTER TABLE dw_data.dw_product_scd
+   ADD CONSTRAINT FK_DW_PRODUCT_SCD foreign key (product_id)
+      REFERENCES dw_data.dw_product_scd (product_id);
+
+ALTER TABLE dw_data.dw_sale_data
+   ADD CONSTRAINT FK_DW_CUSTOMER_DATA foreign key (customer_id)
+      REFERENCES dw_data.dw_customer_data (customer_id);
+
+ALTER TABLE dw_data.dw_sale_data
+   ADD CONSTRAINT FK_DW_STORE_DATA foreign key (store_id)
+      REFERENCES dw_data.dw_store_data (store_id);
+
+ALTER TABLE dw_data.dw_sale_data
+   ADD CONSTRAINT FK_DW_GEO_LOCATION_DATA foreign key (geo_id)
+      REFERENCES dw_data.dw_geo_location_data (geo_id);

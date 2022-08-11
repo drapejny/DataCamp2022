@@ -9,7 +9,7 @@
                 p.sku_num AS sku_num,
                 s.address AS store_address,
                 s.country AS country,
-                p.price AS price,
+                TRUNC(dbms_random.value(1,4)) AS amount,
                 to_char(a.date_id, 'YYYY') || to_char(a.date_id, 'MM') || to_char(a.date_id, 'DD') || to_char(a.customer_id, 'fm0000') || to_char(a.store_id, 'fm00') AS pos_transaction
          FROM
             (SELECT (to_date('12/31/2020', 'MM/DD/YYYY') + TRUNC(dbms_random.value(1, 575))) AS date_id,

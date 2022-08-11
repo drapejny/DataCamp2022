@@ -64,6 +64,6 @@ CREATE TABLE dw_cl.dw_cl_sale_data
     sku_num VARCHAR2(50 CHAR) NOT NULL,
     store_address VARCHAR2(50 CHAR) NOT NULL,
     country VARCHAR2(50 CHAR) NOT NULL,
-    price NUMBER(12) NOT NULL,
+    amount NUMBER(5) NOT NULL,
     pos_transaction VARCHAR2(20 CHAR) NOT NULL
 ) TABLESPACE ts_dw_cl_01;

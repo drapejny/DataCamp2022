@@ -63,6 +63,6 @@ CREATE TABLE sa_sale_data
     sku_num VARCHAR2(50 CHAR),
     store_address VARCHAR2(50 CHAR),
     country VARCHAR2(50 CHAR),
-    price NUMBER(12),
+    amount NUMBER(5),
     pos_transaction VARCHAR2(20 CHAR)
 ) TABLESPACE ts_sa_customers_data_01;

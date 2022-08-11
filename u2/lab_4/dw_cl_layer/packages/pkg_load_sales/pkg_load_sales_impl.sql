@@ -16,7 +16,7 @@ AS
                             sku_num,
                             store_address,
                             country,
-                            price,
+                            amount,
                             pos_transaction
             FROM sa_customers.sa_sale_data;
     BEGIN
