@@ -139,6 +139,12 @@ CREATE TABLE dw_data.dw_sale_data
    CONSTRAINT PK_DW_SALE_DATA PRIMARY KEY (sale_id)
 );
 
+DROP SEQUENCE dw_data.seq_sales;
+CREATE SEQUENCE dw_data.seq_sales
+    START WITH 1
+    INCREMENT BY 1
+    NOCYCLE;
+
 ALTER TABLE dw_data.dw_sale_data
    ADD CONSTRAINT FK_DW_DATE_DATA foreign key (date_id)
       REFERENCES dw_data.dw_date_data (date_id);

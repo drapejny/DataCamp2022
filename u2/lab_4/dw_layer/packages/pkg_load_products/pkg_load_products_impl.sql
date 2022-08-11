@@ -1,8 +1,5 @@
 ALTER SESSION SET CURRENT_SCHEMA = dw_data;
 --GRANT SELECT ON dw_cl.dw_cl_product_data TO dw_data;
-begin
-    pkg_load_products.load_products;
-end;
 CREATE OR REPLACE PACKAGE BODY pkg_load_products
 IS
     PROCEDURE load_products
