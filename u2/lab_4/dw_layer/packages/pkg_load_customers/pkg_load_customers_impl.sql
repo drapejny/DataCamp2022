@@ -1,6 +1,5 @@
 ALTER SESSION SET CURRENT_SCHEMA = dw_data;
 --GRANT SELECT ON dw_cl.dw_cl_customer_data TO dw_data;
---GRANT UNLIMITED TABLESPACE TO dw_data;
 CREATE OR REPLACE PACKAGE BODY pkg_load_customers
 IS
     PROCEDURE load_customers

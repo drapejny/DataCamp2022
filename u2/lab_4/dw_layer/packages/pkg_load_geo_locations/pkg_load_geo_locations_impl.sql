@@ -3,7 +3,7 @@ CREATE OR REPLACE PACKAGE BODY pkg_load_geo_locations
 IS
     PROCEDURE load_geo_locations
     IS
-        TYPE location_t IS TABLE OF dw_data.dw_geo_location%ROWTYPE;
+        TYPE location_t IS TABLE OF dw_data.dw_geo_location_data%ROWTYPE;
 
         CURSOR c IS
              SELECT geo.country_geo_id AS geo_id,
