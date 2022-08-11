@@ -1,35 +1,4 @@
 --================================
--- DW_PRODUCT_DATA
---================================
-DROP TABLE dw_data.dw_product_data;
-CREATE TABLE dw_data.dw_product_data
-(
-    product_id NUMBER NOT NULL,
-    sku_num VARCHAR2(50 CHAR) NOT NULL,
-    price NUMBER(6, 2) NOT NULL,
-    description VARCHAR2(100 CHAR) NOT NULL,
-    type VARCHAR2(25 CHAR) NOT NULL,
-    brand VARCHAR2(80 CHAR) NOT NULL,
-    producer_country VARCHAR2(50 CHAR) NOT NULL,
-    volume NUMBER(12) NOT NULL,
-    shelf_width NUMBER(6, 2) NOT NULL,
-    shelf_hight NUMBER(6, 2) NOT NULL,
-    shelf_depth NUMBER(6, 2) NOT NULL,
-    package VARCHAR2(50 CHAR) NOT NULL,
-    package_color VARCHAR2(50 CHAR) NOT NULL,
-    package_reusable VARCHAR2(50 CHAR) NOT NULL,
-    taste VARCHAR2(80 CHAR) NOT NULL,
-    alcohol NUMBER(6, 2) NOT NULL,
-    CONSTRAINT PK_DW_PRODUCT_DATA PRIMARY KEY (product_id)
-) TABLESPACE ts_dw_data_01;
-
-DROP SEQUENCE dw_data.seq_products;
-CREATE SEQUENCE dw_data.seq_products
-    START WITH 1
-    INCREMENT BY 1
-    NOCYCLE;
-
---================================
 -- DW_STORE_DATA
 --================================
 DROP TABLE dw_data.dw_store_data;
@@ -118,5 +87,37 @@ CREATE TABLE dw_data.dw_geo_location_data (
    country_desc    VARCHAR2(200) NOT NULL,
    part_id         NUMBER(22,0),
    part_desc       VARCHAR2(200),
-   CONSTRAINT PK_DIM_GEO_LOCATION_DATA PRIMARY KEY (geo_id)
+   CONSTRAINT PK_DW_GEO_LOCATION_DATA PRIMARY KEY (geo_id)
 ) TABLESPACE ts_dw_data_01;
+
+--================================
+-- DW_PRODUCT_SCD
+--================================
+DROP TABLE dw_data.dw_product_scd;
+CREATE TABLE dw_data.dw_product_scd (
+    product_id NUMBER NOT NULL,
+    sku_num VARCHAR2(50 CHAR) NOT NULL,
+    eff_time DATE,
+    exp_time DATE,
+    price NUMBER(6, 2) NOT NULL,
+    description VARCHAR2(100 CHAR) NOT NULL,
+    type VARCHAR2(25 CHAR) NOT NULL,
+    brand VARCHAR2(80 CHAR) NOT NULL,
+    producer_country VARCHAR2(50 CHAR) NOT NULL,
+    volume NUMBER(12) NOT NULL,
+    shelf_width NUMBER(6, 2) NOT NULL,
+    shelf_hight NUMBER(6, 2) NOT NULL,
+    shelf_depth NUMBER(6, 2) NOT NULL,
+    package VARCHAR2(50 CHAR) NOT NULL,
+    package_color VARCHAR2(50 CHAR) NOT NULL,
+    package_reusable VARCHAR2(50 CHAR) NOT NULL,
+    taste VARCHAR2(80 CHAR) NOT NULL,
+    alcohol NUMBER(6, 2) NOT NULL,
+    CONSTRAINT PK_DW_PRODUCT_SCD PRIMARY KEY (product_id)
+) TABLESPACE ts_dw_data_01;
+
+DROP SEQUENCE dw_data.seq_products;
+CREATE SEQUENCE dw_data.seq_products
+    START WITH 1
+    INCREMENT BY 1
+    NOCYCLE;
