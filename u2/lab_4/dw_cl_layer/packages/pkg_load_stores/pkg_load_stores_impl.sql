@@ -11,6 +11,7 @@ IS
                             phone
             FROM sa_products.sa_store_data;
     BEGIN
+        EXECUTE IMMEDIATE 'TRUNCATE TABLE dw_cl_store_data';
         FOR i IN c LOOP
             INSERT INTO dw_cl_store_data(
                             address,

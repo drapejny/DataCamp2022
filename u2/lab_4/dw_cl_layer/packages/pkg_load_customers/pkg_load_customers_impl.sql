@@ -12,6 +12,7 @@ IS
                             birthday
             FROM sa_customers.sa_customer_data;
     BEGIN
+        EXECUTE IMMEDIATE 'TRUNCATE TABLE dw_cl_customer_data';
         FOR i IN c LOOP
             INSERT INTO dw_cl_customer_data(
                             first_name,

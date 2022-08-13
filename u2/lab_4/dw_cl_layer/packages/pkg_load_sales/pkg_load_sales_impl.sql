@@ -20,6 +20,7 @@ AS
                             pos_transaction
             FROM sa_customers.sa_sale_data;
     BEGIN
+        EXECUTE IMMEDIATE 'TRUNCATE TABLE dw_cl_sale_data';
         OPEN c;
         LOOP
             FETCH c

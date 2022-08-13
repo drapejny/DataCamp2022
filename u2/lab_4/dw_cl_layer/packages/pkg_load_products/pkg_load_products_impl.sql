@@ -21,6 +21,7 @@ IS
                             alcohol
             FROM sa_products.sa_product_data;
     BEGIN
+        EXECUTE IMMEDIATE 'TRUNCATE TABLE dw_cl_product_data';
         FOR i IN c LOOP
             INSERT INTO dw_cl_product_data(
                             sku_num,
