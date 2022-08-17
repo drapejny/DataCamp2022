@@ -4,7 +4,7 @@ CREATE OR REPLACE PACKAGE BODY pkg_load_stores
 IS
     PROCEDURE load_stores
     IS
-        TYPE store_rows_t IS TABLE OF dw_data.dw_store_data%ROWTYPE;
+        TYPE store_rows_t IS TABLE OF dw_data.dim_stores%ROWTYPE;
 
         TYPE store_t IS REF CURSOR;
 
@@ -22,7 +22,7 @@ IS
                             cl.city,
                             cl.phone
             FROM dw_cl.dw_cl_store_data cl
-            LEFT JOIN dw_data.dw_store_data dw
+            LEFT JOIN dw_data.dim_stores dw
             ON cl.address = dw.address
             WHERE dw.store_id IS NULL;
 
@@ -31,7 +31,7 @@ IS
         BULK COLLECT INTO new_stores;
 
         FORALL i IN 1 .. new_stores.COUNT()
-                INSERT INTO dw_data.dw_store_data
+                INSERT INTO dw_data.dim_stores
                 (   
                     store_id,
                     address,
@@ -61,7 +61,7 @@ IS
                             cl.city,
                             cl.phone
             FROM dw_cl.dw_cl_store_data cl
-            LEFT JOIN dw_data.dw_store_data dw
+            LEFT JOIN dw_data.dim_stores dw
             ON cl.address = dw.address
             WHERE dw.store_id IS NOT NULL;
 
@@ -69,7 +69,7 @@ IS
         BULK COLLECT INTO update_stores;
 
         FORALL i IN 1 .. update_stores.COUNT()
-            UPDATE dw_data.dw_store_data
+            UPDATE dw_data.dim_stores
             SET address = update_stores(i).address,
                 country = update_stores(i).country,
                 region = update_stores(i).region,

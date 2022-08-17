@@ -17,7 +17,7 @@
                     TRUNC(dbms_random.value(1, 17)) AS store_id,
                     TRUNC(dbms_random.value(1, 6401)) AS customer_id
              FROM dual
-             CONNECT BY LEVEL <= 500000) a
+             CONNECT BY LEVEL <= 300000) a
          INNER JOIN (SELECT sa_products.sa_product_data.*, rownum AS id FROM sa_products.sa_product_data) p
          ON a.product_id = p.id
          INNER JOIN (SELECT sa_products.sa_store_data.*, rownum AS id FROM sa_products.sa_store_data) s

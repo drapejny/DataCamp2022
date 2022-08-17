@@ -4,7 +4,7 @@ CREATE OR REPLACE PACKAGE BODY pkg_load_products
 IS
     PROCEDURE load_products
     IS
-        old_product_row dw_data.dw_product_scd%ROWTYPE;
+        old_product_row dw_data.dim_products_scd%ROWTYPE;
 
         CURSOR c IS
             SELECT  dw.product_id,
@@ -26,13 +26,14 @@ IS
                     cl.taste,
                     cl.alcohol
             FROM dw_cl.dw_cl_product_data cl
-            LEFT JOIN dw_data.dw_product_scd dw
-            ON cl.sku_num = dw.sku_num;
+            LEFT JOIN dw_data.dim_products_scd dw
+            ON cl.sku_num = dw.sku_num
+            WHERE dw.exp_time IS NULL;
 
     BEGIN
         FOR i in c LOOP
             IF i.product_id IS NULL THEN
-                INSERT INTO dw_data.dw_product_scd
+                INSERT INTO dw_data.dim_products_scd
                             (
                             product_id,
                             sku_num,
@@ -78,10 +79,10 @@ IS
 
                 SELECT *
                 INTO old_product_row
-                FROM dw_data.dw_product_scd
+                FROM dw_data.dim_products_scd
                 WHERE product_id = i.product_id;
 
-                UPDATE dw_data.dw_product_scd
+                UPDATE dw_data.dim_products_scd
                 SET 
                     eff_time = SYSDATE,
                     exp_time = NULL,
@@ -101,7 +102,7 @@ IS
                     alcohol = i.alcohol
                 WHERE product_id = i.product_id;
 
-                INSERT INTO dw_data.dw_product_scd
+                INSERT INTO dw_data.dim_products_scd
                         (
                             product_id,
                             sku_num,

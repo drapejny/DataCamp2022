@@ -1,9 +1,9 @@
 --================================
--- DW_STORE_DATA
+-- DIM_STORES
 --================================
-DROP TABLE dw_data.dw_sale_data;
-DROP TABLE dw_data.dw_store_data;
-CREATE TABLE dw_data.dw_store_data
+DROP TABLE dw_data.dim_stores;
+DROP TABLE dw_data.dim_stores;
+CREATE TABLE dw_data.dim_stores
 (
     store_id NUMBER NOT NULL,
     address VARCHAR2(50 CHAR) NOT NULL,
@@ -11,7 +11,7 @@ CREATE TABLE dw_data.dw_store_data
     region VARCHAR2(50 CHAR) NOT NULL,
     city VARCHAR2(50 CHAR) NOT NULL,
     phone VARCHAR2(20 CHAR) NOT NULL,
-    CONSTRAINT PK_DW_STORE_DATA PRIMARY KEY (store_id)
+    CONSTRAINT PK_DIM_STORES PRIMARY KEY (store_id)
 ) TABLESPACE ts_dw_data_01;
 
 DROP SEQUENCE dw_data.seq_stores;
@@ -21,10 +21,10 @@ CREATE SEQUENCE dw_data.seq_stores
     NOCYCLE;
 
 --================================
--- DW_CUSTOMER_DATA
+-- DIM_CUSTOMERS
 --================================
-DROP TABLE dw_data.dw_customer_data;
-CREATE TABLE dw_data.dw_customer_data
+DROP TABLE dw_data.dim_customers;
+CREATE TABLE dw_data.dim_customers
 (
     customer_id NUMBER NOT NULL,
     first_name VARCHAR2(50 CHAR) NOT NULL,
@@ -33,7 +33,7 @@ CREATE TABLE dw_data.dw_customer_data
     country VARCHAR2(200 CHAR) NOT NULL,
     email VARCHAR2(100 CHAR) NOT NULL,
     birthday DATE NOT NULL,
-    CONSTRAINT PK_DW_CUSTOMER_DATA PRIMARY KEY (customer_id)
+    CONSTRAINT PK_DIM_CUSTOMERS PRIMARY KEY (customer_id)
 ) TABLESPACE ts_dw_data_01;
 
 DROP SEQUENCE dw_data.seq_customers;
@@ -43,10 +43,10 @@ CREATE SEQUENCE dw_data.seq_customers
     NOCYCLE;
 
 --================================
--- DW_DATE_DATA
+-- DIM_DATES
 --================================
-DROP TABLE dw_data.dw_date_data;
-CREATE TABLE dw_data.dw_date_data
+DROP TABLE dw_data.dim_dates;
+CREATE TABLE dw_data.dim_dates
 (
     date_id DATE NOT NULL,
     day_name VARCHAR2(44) NOT NULL,
@@ -67,14 +67,14 @@ CREATE TABLE dw_data.dw_date_data
     days_in_cal_year NUMBER NOT NULL,
     beg_of_cal_year DATE NOT NULL,
     end_of_cal_year DATE NOT NULL,
-    CONSTRAINT PK_DW_DATE_DATA PRIMARY KEY (date_id)
+    CONSTRAINT PK_DIM_DATES PRIMARY KEY (date_id)
 ) TABLESPACE ts_dw_data_01;
 
 --=================================
--- DW_GEO_LOCATION_DATA
+-- DIM_GEO_LOCATIONS
 --=================================
-DROP TABLE dw_data.dw_geo_location_data;
-CREATE TABLE dw_data.dw_geo_location_data (
+DROP TABLE dw_data.dim_geo_locations;
+CREATE TABLE dw_data.dim_geo_locations (
    geo_id          NUMBER NOT NULL,
    group_id        NUMBER(22,0),
    group_desc      VARCHAR2(200),
@@ -88,14 +88,14 @@ CREATE TABLE dw_data.dw_geo_location_data (
    country_desc    VARCHAR2(200) NOT NULL,
    part_id         NUMBER(22,0),
    part_desc       VARCHAR2(200),
-   CONSTRAINT PK_DW_GEO_LOCATION_DATA PRIMARY KEY (geo_id)
+   CONSTRAINT PK_DIM_GEO_LOCATIONS PRIMARY KEY (geo_id)
 ) TABLESPACE ts_dw_data_01;
 
 --================================
--- DW_PRODUCT_SCD
+-- DIM_PRODUCTS_SCD
 --================================
-DROP TABLE dw_data.dw_product_scd;
-CREATE TABLE dw_data.dw_product_scd (
+DROP TABLE dw_data.dim_products_scd;
+CREATE TABLE dw_data.dim_products_scd (
     product_id NUMBER NOT NULL,
     sku_num VARCHAR2(50 CHAR) NOT NULL,
     eff_time DATE,
@@ -114,7 +114,7 @@ CREATE TABLE dw_data.dw_product_scd (
     package_reusable VARCHAR2(50 CHAR) NOT NULL,
     taste VARCHAR2(80 CHAR) NOT NULL,
     alcohol NUMBER(6, 2) NOT NULL,
-    CONSTRAINT PK_DW_PRODUCT_SCD PRIMARY KEY (product_id)
+    CONSTRAINT PK_DIM_PRODUCTS_SCD PRIMARY KEY (product_id)
 ) TABLESPACE ts_dw_data_01;
 
 DROP SEQUENCE dw_data.seq_products;
@@ -124,9 +124,9 @@ CREATE SEQUENCE dw_data.seq_products
     NOCYCLE;
 
 --===================================
--- DW_SALE_DATA
+-- FCT_SALES
 --==================================
-CREATE TABLE dw_data.dw_sale_data
+CREATE TABLE dw_data.fct_sales
 (
    sale_id            NUMBER,
    date_id            DATE,
@@ -136,7 +136,7 @@ CREATE TABLE dw_data.dw_sale_data
    geo_id             NUMBER,
    amount             NUMBER(5),
    pos_transaction    VARCHAR2(20 CHAR),
-   CONSTRAINT PK_DW_SALE_DATA PRIMARY KEY (sale_id)
+   CONSTRAINT PK_FCT_SALES PRIMARY KEY (sale_id)
 );
 
 DROP SEQUENCE dw_data.seq_sales;
@@ -145,22 +145,22 @@ CREATE SEQUENCE dw_data.seq_sales
     INCREMENT BY 1
     NOCYCLE;
 
-ALTER TABLE dw_data.dw_sale_data
-   ADD CONSTRAINT FK_DW_DATE_DATA foreign key (date_id)
-      REFERENCES dw_data.dw_date_data (date_id);
+ALTER TABLE dw_data.fct_sales
+   ADD CONSTRAINT FK_DIM_DATES foreign key (date_id)
+      REFERENCES dw_data.dim_dates (date_id);
 
-ALTER TABLE dw_data.dw_product_scd
-   ADD CONSTRAINT FK_DW_PRODUCT_SCD foreign key (product_id)
-      REFERENCES dw_data.dw_product_scd (product_id);
+ALTER TABLE dw_data.fct_sales
+   ADD CONSTRAINT FK_DIM_PRODUCTS_SCD foreign key (product_id)
+      REFERENCES dw_data.dim_products_scd (product_id);
 
-ALTER TABLE dw_data.dw_sale_data
-   ADD CONSTRAINT FK_DW_CUSTOMER_DATA foreign key (customer_id)
-      REFERENCES dw_data.dw_customer_data (customer_id);
+ALTER TABLE dw_data.fct_sales
+   ADD CONSTRAINT FK_DIM_CUSTOMERS foreign key (customer_id)
+      REFERENCES dw_data.dim_customers (customer_id);
 
-ALTER TABLE dw_data.dw_sale_data
-   ADD CONSTRAINT FK_DW_STORE_DATA foreign key (store_id)
-      REFERENCES dw_data.dw_store_data (store_id);
+ALTER TABLE dw_data.fct_sales
+   ADD CONSTRAINT FK_DIM_STORES foreign key (store_id)
+      REFERENCES dw_data.dim_stores (store_id);
 
-ALTER TABLE dw_data.dw_sale_data
-   ADD CONSTRAINT FK_DW_GEO_LOCATION_DATA foreign key (geo_id)
-      REFERENCES dw_data.dw_geo_location_data (geo_id);
+ALTER TABLE dw_data.fct_sales
+   ADD CONSTRAINT FK_DW_DIM_GEO_LOCATIONSforeign key (geo_id)
+      REFERENCES dw_data.dim_geo_locations (geo_id);

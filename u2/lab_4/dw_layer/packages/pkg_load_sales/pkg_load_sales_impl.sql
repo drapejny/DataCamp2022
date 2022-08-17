@@ -4,7 +4,7 @@ CREATE OR REPLACE PACKAGE BODY pkg_load_sales
 IS
     PROCEDURE load_sales
     IS
-        TYPE sales_rows_t IS TABLE OF dw_data.dw_sale_data%ROWTYPE;
+        TYPE sales_rows_t IS TABLE OF dw_data.fct_sales%ROWTYPE;
 
         sales sales_rows_t;
 
@@ -18,13 +18,13 @@ IS
                     cl.amount,
                     cl.pos_transaction
             FROM dw_cl.dw_cl_sale_data cl
-            JOIN dw_data.dw_product_scd  pr
-            ON cl.sku_num = pr.sku_num
-            JOIN dw_data.dw_customer_data cu
+            JOIN dw_data.dim_products_scd  pr
+            ON cl.sku_num = pr.sku_num AND pr.exp_time IS NULL
+            JOIN dw_data.dim_customers cu
             ON cl.phone = cu.phone
-            JOIN dw_data.dw_store_data st
+            JOIN dw_data.dim_stores st
             ON cl.store_address = st.address
-            JOIN dw_data.dw_geo_location_data geo
+            JOIN dw_data.dim_geo_locations geo
             ON cl.country = geo.country_desc;
 
     BEGIN
@@ -33,7 +33,7 @@ IS
             FETCH c
             BULK COLLECT INTO sales;
             FORALL i in 1 .. sales.COUNT()
-                INSERT INTO dw_data.dw_sale_data
+                INSERT INTO dw_data.fct_sales
                             (
                                 sale_id,
                                 date_id,
