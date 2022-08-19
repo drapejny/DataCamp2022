@@ -4,7 +4,7 @@ CREATE OR REPLACE PACKAGE BODY pkg_load_stores
 IS
     PROCEDURE load_stores
     IS
-        TYPE store_rows_t IS TABLE OF dw_data.dim_stores%ROWTYPE;
+        TYPE store_rows_t IS TABLE OF dw_data.dw_stores%ROWTYPE;
 
         TYPE store_t IS REF CURSOR;
 
@@ -20,9 +20,11 @@ IS
                             cl.country,
                             cl.region,
                             cl.city,
-                            cl.phone
+                            cl.phone,
+                            dw.insert_dt,
+                            dw.update_dt
             FROM dw_cl.dw_cl_store_data cl
-            LEFT JOIN dw_data.dim_stores dw
+            LEFT JOIN dw_data.dw_stores dw
             ON cl.address = dw.address
             WHERE dw.store_id IS NULL;
 
@@ -31,14 +33,16 @@ IS
         BULK COLLECT INTO new_stores;
 
         FORALL i IN 1 .. new_stores.COUNT()
-                INSERT INTO dw_data.dim_stores
+                INSERT INTO dw_data.dw_stores
                 (   
                     store_id,
                     address,
                     country,
                     region,
                     city,
-                    phone
+                    phone,
+                    insert_dt,
+                    update_dt
                 )
                 VALUES
                 (
@@ -47,7 +51,9 @@ IS
                     new_stores(i).country,
                     new_stores(i).region,
                     new_stores(i).city,
-                    new_stores(i).phone
+                    new_stores(i).phone,
+                    SYSDATE,
+                    SYSDATE
                 );
         COMMIT;
         
@@ -59,9 +65,11 @@ IS
                             cl.country,
                             cl.region,
                             cl.city,
-                            cl.phone
+                            cl.phone,
+                            dw.insert_dt,
+                            dw.update_dt
             FROM dw_cl.dw_cl_store_data cl
-            LEFT JOIN dw_data.dim_stores dw
+            LEFT JOIN dw_data.dw_stores dw
             ON cl.address = dw.address
             WHERE dw.store_id IS NOT NULL;
 
@@ -69,12 +77,13 @@ IS
         BULK COLLECT INTO update_stores;
 
         FORALL i IN 1 .. update_stores.COUNT()
-            UPDATE dw_data.dim_stores
+            UPDATE dw_data.dw_stores
             SET address = update_stores(i).address,
                 country = update_stores(i).country,
                 region = update_stores(i).region,
                 city = update_stores(i).city,
-                phone = update_stores(i).phone
+                phone = update_stores(i).phone,
+                update_dt = SYSDATE
             WHERE store_id = update_stores(i).store_id;
         COMMIT;
         

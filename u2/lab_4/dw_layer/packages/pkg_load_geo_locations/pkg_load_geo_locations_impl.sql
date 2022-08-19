@@ -3,7 +3,7 @@ CREATE OR REPLACE PACKAGE BODY pkg_load_geo_locations
 IS
     PROCEDURE load_geo_locations
     IS
-        TYPE location_t IS TABLE OF dw_data.dim_geo_locations%ROWTYPE;
+        TYPE location_t IS TABLE OF dw_data.dw_geo_locations%ROWTYPE;
 
         CURSOR c IS
              SELECT geo.country_geo_id AS geo_id,
@@ -49,13 +49,13 @@ IS
             ON (geo.country_sub_group_geo_id = cnt_sub_gr.geo_id )
             LEFT JOIN u_dw_references.cu_geo_systems gs
             ON (geo.system_geo_id = gs.geo_id)
-            LEFT JOIN dw_data.dim_geo_locations dw
+            LEFT JOIN dw_data.dw_geo_locations dw
             ON geo.country_geo_id = dw.geo_id
             WHERE dw.geo_id IS NULL;
 
     BEGIN
         FOR i IN c LOOP
-            INSERT INTO dw_data.dim_geo_locations
+            INSERT INTO dw_data.dw_geo_locations
                             (   
                                geo_id,     
                                group_id,    

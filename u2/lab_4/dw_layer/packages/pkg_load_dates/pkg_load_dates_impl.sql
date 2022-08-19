@@ -3,14 +3,14 @@ CREATE OR REPLACE PACKAGE BODY dw_data.pkg_load_dates
 IS
     PROCEDURE load_dates
     IS
-        top_date_in_dw dw_data.dim_dates.date_id%TYPE;
+        top_date_in_dw dw_data.dw_dates.date_id%TYPE;
         current_date DATE;
         date_diff NUMBER;
 
     BEGIN
         SELECT MAX(date_id)
         INTO top_date_in_dw
-        FROM dw_data.dim_dates;
+        FROM dw_data.dw_dates;
 
         IF top_date_in_dw IS NULL THEN
             top_date_in_dw := to_date('12/31/2020', 'MM/DD/YYYY');
@@ -22,7 +22,7 @@ IS
         
             date_diff := current_date - top_date_in_dw;
 
-            INSERT INTO dw_data.dim_dates (date_id,
+            INSERT INTO dw_data.dw_dates (date_id,
                                               day_name,
                                               day_number_in_week,
                                               day_number_in_month,
