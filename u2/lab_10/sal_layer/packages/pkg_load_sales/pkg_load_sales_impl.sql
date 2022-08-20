@@ -1,30 +1,30 @@
-ALTER SESSION SET CURRENT_SCHEMA = dw_data;
---GRANT SELECT ON dw_cl.dw_cl_sale_data TO dw_data;
+ALTER SESSION SET CURRENT_SCHEMA = sal_data;
+--GRANT SELECT ON dw_data.dw_sales TO sal_data;
 CREATE OR REPLACE PACKAGE BODY pkg_load_sales
 IS
     PROCEDURE load_sales
     IS
-        TYPE sales_rows_t IS TABLE OF dw_data.dw_sales%ROWTYPE;
+        TYPE sales_rows_t IS TABLE OF sal_data.fct_sales%ROWTYPE;
 
         sales sales_rows_t;
-
+        
         CURSOR c IS
-            SELECT  1,
-                    cl.date_id,
-                    cl.sku_num AS product_src_id,
-                    cu.customer_id,
-                    st.store_id,
-                    geo.geo_id,
-                    cl.amount,
-                    cl.pos_transaction,
-                    SYSDATE AS insert_dt
-            FROM dw_cl.dw_cl_sale_data cl
-            LEFT JOIN dw_data.dw_customers cu
-            ON cl.phone = cu.phone
-            LEFT JOIN dw_data.dw_stores st
-            ON cl.store_address = st.address
-            LEFT JOIN dw_data.dw_geo_locations geo
-            ON cl.country = geo.country_desc;
+            SELECT  dw.sale_id,
+                    dw.date_id,
+                    pr.product_id,
+                    dw.customer_id,
+                    dw.store_id,
+                    dw.geo_id,
+                    dw.amount,
+                    dw.pos_transaction,
+                    dw.insert_dt,
+                    dw.amount * pr.price AS sum
+            FROM dw_data.dw_sales dw
+            LEFT JOIN sal_data.fct_sales sal
+            ON dw.sale_id = sal.sale_id
+            LEFT JOIN sal_data.dim_products_scd pr
+            ON dw.product_src_id = pr.product_src_id AND dw.insert_dt BETWEEN pr.start_dt AND pr.end_dt
+            WHERE sal.sale_id IS NULL;
 
     BEGIN
         OPEN c;
@@ -32,27 +32,29 @@ IS
             FETCH c
             BULK COLLECT INTO sales;
             FORALL i in 1 .. sales.COUNT()
-                INSERT INTO dw_data.dw_sales
+                INSERT INTO sal_data.fct_sales
                             (
                                 sale_id,
                                 date_id,
-                                product_src_id,
+                                product_id,
                                 customer_id,
                                 store_id,
                                 geo_id,
                                 amount,
+                                sum,
                                 pos_transaction,
                                 insert_dt
                             )
                     VALUES 
                         (
-                            seq_sales.NEXTVAL,
+                            sales(i).sale_id,
                             sales(i).date_id,
-                            sales(i).product_src_id,
+                            sales(i).product_id,
                             sales(i).customer_id,
                             sales(i).store_id,
                             sales(i).geo_id,
                             sales(i).amount,
+                            sales(i).sum,
                             sales(i).pos_transaction,
                             sales(i).insert_dt
                         );

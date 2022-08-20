@@ -1,76 +1,62 @@
-ALTER SESSION SET CURRENT_SCHEMA = dw_data;
---GRANT SELECT ON dw_cl.dw_cl_product_data TO dw_data;
+ALTER SESSION SET CURRENT_SCHEMA = sal_data;
+--GRANT SELECT ON dw_data.dw_products TO sal_data;
 CREATE OR REPLACE PACKAGE BODY pkg_load_products
 IS
     PROCEDURE load_products
     IS
-        old_product_row dw_data.dw_products%ROWTYPE;
-
         CURSOR c IS
             SELECT
-                    sku_num,
-                    price,
-                    description,
-                    type,
-                    brand,
-                    producer_country,
-                    volume,
-                    shelf_width,
-                    shelf_hight,
-                    shelf_depth,
-                    package,
-                    package_color,
-                    package_reusable,
-                    taste,
-                    alcohol
-            FROM dw_cl.dw_cl_product_data;
-
+                    dw.product_id,
+                    dw.product_src_id,
+                    dw.price,
+                    dw.description,
+                    dw.type,
+                    dw.brand,
+                    dw.producer_country,
+                    dw.volume,
+                    dw.shelf_width,
+                    dw.shelf_hight,
+                    dw.shelf_depth,
+                    dw.package,
+                    dw.package_color,
+                    dw.package_reusable,
+                    dw.taste,
+                    dw.alcohol,
+                    dw.insert_dt
+            FROM dw_data.dw_products dw
+            LEFT JOIN sal_data.dim_products_scd sal
+            ON dw.product_id = sal.product_id
+            WHERE sal.product_id IS NULL
+            ORDER BY dw.product_id, dw.insert_dt;
     BEGIN
         FOR i in c LOOP
-             INSERT INTO dw_data.dw_products
-                        (
-                        product_id,
-                        product_src_id,
-                        price,
-                        description,
-                        type,
-                        brand,
-                        producer_country,
-                        volume,
-                        shelf_width,
-                        shelf_hight,
-                        shelf_depth,
-                        package,
-                        package_color,
-                        package_reusable,
-                        taste,
-                        alcohol,
-                        insert_dt
-                        )
-                    VALUES
-                        (
-                            dw_data.seq_products.NEXTVAL,
-                            i.sku_num,
-                            i.price,
-                            i.description,
-                            i.type,
-                            i.brand,
-                            i.producer_country,
-                            i.volume,
-                            i.shelf_width,
-                            i.shelf_hight,
-                            i.shelf_depth,
-                            i.package,
-                            i.package_color,
-                            i.package_reusable,
-                            i.taste,
-                            i.alcohol,
-                            SYSDATE
+            UPDATE sal_data.dim_products_scd
+                SET end_dt = i.insert_dt
+                WHERE product_src_id = i.product_src_id AND 
+                      end_dt = TO_DATE('31.12.9999', 'dd.MM.yyyy');
+            INSERT INTO sal_data.dim_products_scd
+                VALUES (
+                        i.product_id,
+                        i.product_src_id,
+                        i.price,
+                        i.description,
+                        i.type,
+                        i.brand,
+                        i.producer_country,
+                        i.volume,
+                        i.shelf_width,
+                        i.shelf_hight,
+                        i.shelf_depth,
+                        i.package,
+                        i.package_color,
+                        i.package_reusable,
+                        i.taste,
+                        i.alcohol,
+                        i.insert_dt,
+                        TO_DATE('31.12.9999', 'dd.MM.yyyy')
                         );
             EXIT WHEN c%NOTFOUND;
         END LOOP;
-        
         COMMIT;
-
     END load_products;
 END pkg_load_products;

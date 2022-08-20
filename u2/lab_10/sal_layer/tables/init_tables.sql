@@ -143,6 +143,7 @@ CREATE TABLE sal_data.fct_sales
    store_id           NUMBER,
    geo_id             NUMBER,
    amount             NUMBER(5),
+   sum                NUMBER(10,2),
    pos_transaction    VARCHAR2(20 CHAR),
    insert_dt          DATE,
    CONSTRAINT PK_FCT_SALES PRIMARY KEY (sale_id)
