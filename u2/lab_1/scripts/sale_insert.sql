@@ -23,6 +23,6 @@
          INNER JOIN (SELECT sa_products.sa_store_data.*, rownum AS id FROM sa_products.sa_store_data) s
          ON a.store_id = s.id
          INNER JOIN (SELECT sa_customers.sa_customer_data.*, rownum AS id FROM sa_customers.sa_customer_data) c
-         ON a.store_id = c.id;
+         ON a.customer_id = c.id;
          
 COMMIT;
