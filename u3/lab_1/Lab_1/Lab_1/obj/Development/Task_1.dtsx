@@ -1,0 +1,370 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="8/24/2022 9:35:02 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-T6EFTML"
+  DTS:CreatorName="DESKTOP-T6EFTML\Anton Slizh"
+  DTS:Description="DTS Wizard-generated package"
+  DTS:DTSID="{4C8E6076-03A9-4947-B136-2291AB9BB21A}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.694.0"
+  DTS:LocaleID="8192"
+  DTS:MaxErrorCount="0"
+  DTS:ObjectName="Package1"
+  DTS:VersionBuild="3"
+  DTS:VersionGUID="{99E09D3A-0FB0-4269-BE61-AAB423B2DC20}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DestinationConnectionFlatFile]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{3952DEEF-65FD-4146-9BC8-4A9B08EE0B4D}"
+      DTS:ObjectName="DestinationConnectionFlatFile">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="8192"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1251"
+          DTS:ConnectionString="D:\DataMola\Labs\DataCamp2022\u3\lab_1\result\Currency.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="3"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CurrencyCode"
+              DTS:DTSID="{8C7F415F-9B2F-4528-BEE3-6B3D5485F84D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Name"
+              DTS:DTSID="{80AE9A7F-FBB1-434F-9040-3E17DE65372A}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SourceConnectionOLEDB]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{987D674C-0DC5-4F47-A45C-9E82C6D39B9C}"
+      DTS:ObjectName="SourceConnectionOLEDB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-T6EFTML;Initial Catalog=AdventureWorks2019;Provider=SQLOLEDB;Integrated Security=SSPI;Auto Translate=false;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Load to Currency txt"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:DTSID="{AEC63BE5-F0D5-428E-A5C6-5F38CCFC579E}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:FailPackageOnFailure="True"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load to Currency txt"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          defaultBufferSize="3145728"
+          version="1">
+          <components>
+            <component
+              refId="Package\Load to Currency txt\Destination - Currency_txt"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Назначение &quot;Неструктурированный файл&quot;;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;1"
+              description="Назначение &quot;Неструктурированный файл&quot;"
+              localeId="8192"
+              name="Destination - Currency_txt"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Указывает, следует ли перезаписывать данные в целевой файл или добавлять их в его конец."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.String"
+                  description="Задает текст, который записывается в целевой файл перед записью любых данных."
+                  expressionType="Notify"
+                  name="Header"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Если ограничитель текста включен, указывает, будут ли добавляться escape-символы для ограничителя в данных, записываемых в конечный файл."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load to Currency txt\Destination - Currency_txt.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DestinationConnectionFlatFile]"
+                  connectionManagerRefId="Package.ConnectionManagers[DestinationConnectionFlatFile]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load to Currency txt\Destination - Currency_txt.Inputs[Вход назначения &quot;Неструктурированный файл&quot;]"
+                  hasSideEffects="true"
+                  name="Вход назначения &quot;Неструктурированный файл&quot;">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load to Currency txt\Destination - Currency_txt.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].Columns[CurrencyCode]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="CurrencyCode"
+                      externalMetadataColumnId="Package\Load to Currency txt\Destination - Currency_txt.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[CurrencyCode]"
+                      lineageId="Package\Load to Currency txt\Source - Currency.Outputs[Выход источника &quot;OLE DB&quot;].Columns[CurrencyCode]" />
+                    <inputColumn
+                      refId="Package\Load to Currency txt\Destination - Currency_txt.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].Columns[Name]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Name"
+                      externalMetadataColumnId="Package\Load to Currency txt\Destination - Currency_txt.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[Name]"
+                      lineageId="Package\Load to Currency txt\Source - Currency.Outputs[Выход источника &quot;OLE DB&quot;].Columns[Name]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load to Currency txt\Destination - Currency_txt.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[CurrencyCode]"
+                      dataType="wstr"
+                      length="3"
+                      name="CurrencyCode" />
+                    <externalMetadataColumn
+                      refId="Package\Load to Currency txt\Destination - Currency_txt.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[Name]"
+                      dataType="wstr"
+                      length="50"
+                      name="Name" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Load to Currency txt\Source - Currency"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Источник &quot;OLE DB&quot;;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;7"
+              description="Источник &quot;OLE DB&quot;"
+              name="Source - Currency"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Время ожидания команды, в секундах. Величина 0 означает неограниченное время ожидания."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Указывает имя объекта базы данных, используемого для открытия набора строк."
+                  name="OpenRowset">[Sales].[Currency]</property>
+                <property
+                  dataType="System.String"
+                  description="Указывает переменную, содержащую имя объекта базы данных, используемого для открытия набора строк."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Команда SQL для выполнения."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="Переменная, содержащая команду SQL для выполнения."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Указывает кодовую страницу столбца, используемую, когда недоступны сведения о кодовой странице из источника данных."
+                  name="DefaultCodePage">1251</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Вызывает безусловное использование значение свойства DefaultCodePage при описании символьных данных."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Указывает используемый режим доступа к базе данных."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Сопоставления между параметрами в команде SQL и переменными."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load to Currency txt\Source - Currency.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SourceConnectionOLEDB]"
+                  connectionManagerRefId="Package.ConnectionManagers[SourceConnectionOLEDB]"
+                  description="Соединение OLE DB среды выполнения, используемое для доступа к базе данных."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Load to Currency txt\Source - Currency.Outputs[Выход источника &quot;OLE DB&quot;]"
+                  name="Выход источника &quot;OLE DB&quot;">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load to Currency txt\Source - Currency.Outputs[Выход источника &quot;OLE DB&quot;].Columns[CurrencyCode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load to Currency txt\Source - Currency.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[CurrencyCode]"
+                      length="3"
+                      lineageId="Package\Load to Currency txt\Source - Currency.Outputs[Выход источника &quot;OLE DB&quot;].Columns[CurrencyCode]"
+                      name="CurrencyCode"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load to Currency txt\Source - Currency.Outputs[Выход источника &quot;OLE DB&quot;].Columns[Name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load to Currency txt\Source - Currency.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[Name]"
+                      length="50"
+                      lineageId="Package\Load to Currency txt\Source - Currency.Outputs[Выход источника &quot;OLE DB&quot;].Columns[Name]"
+                      name="Name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load to Currency txt\Source - Currency.Outputs[Выход источника &quot;OLE DB&quot;].Columns[ModifiedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load to Currency txt\Source - Currency.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[ModifiedDate]"
+                      lineageId="Package\Load to Currency txt\Source - Currency.Outputs[Выход источника &quot;OLE DB&quot;].Columns[ModifiedDate]"
+                      name="ModifiedDate"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load to Currency txt\Source - Currency.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[CurrencyCode]"
+                      dataType="wstr"
+                      length="3"
+                      name="CurrencyCode" />
+                    <externalMetadataColumn
+                      refId="Package\Load to Currency txt\Source - Currency.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[Name]"
+                      dataType="wstr"
+                      length="50"
+                      name="Name" />
+                    <externalMetadataColumn
+                      refId="Package\Load to Currency txt\Source - Currency.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[ModifiedDate]"
+                      dataType="dbTimeStamp"
+                      name="ModifiedDate" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Load to Currency txt\Source - Currency.Outputs[Вывод ошибок источника &quot;OLE DB&quot;]"
+                  isErrorOut="true"
+                  name="Вывод ошибок источника &quot;OLE DB&quot;">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load to Currency txt\Source - Currency.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[CurrencyCode]"
+                      dataType="wstr"
+                      length="3"
+                      lineageId="Package\Load to Currency txt\Source - Currency.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[CurrencyCode]"
+                      name="CurrencyCode" />
+                    <outputColumn
+                      refId="Package\Load to Currency txt\Source - Currency.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[Name]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Load to Currency txt\Source - Currency.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[Name]"
+                      name="Name" />
+                    <outputColumn
+                      refId="Package\Load to Currency txt\Source - Currency.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ModifiedDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Load to Currency txt\Source - Currency.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ModifiedDate]"
+                      name="ModifiedDate" />
+                    <outputColumn
+                      refId="Package\Load to Currency txt\Source - Currency.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load to Currency txt\Source - Currency.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load to Currency txt\Source - Currency.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load to Currency txt\Source - Currency.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Load to Currency txt.Paths[Выход источника &quot;OLE DB&quot;]"
+              endId="Package\Load to Currency txt\Destination - Currency_txt.Inputs[Вход назначения &quot;Неструктурированный файл&quot;]"
+              name="Выход источника &quot;OLE DB&quot;"
+              startId="Package\Load to Currency txt\Source - Currency.Outputs[Выход источника &quot;OLE DB&quot;]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="172,41.6"
+          Id="Package\Load to Currency txt"
+          TopLeft="130.499995032947,115.566667541398" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Load to Currency txt">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="Package\Load to Currency txt\Source - Currency"
+          TopLeft="NaN,NaN" />
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="Package\Load to Currency txt\Destination - Currency_txt"
+          TopLeft="NaN,NaN" />
+        <EdgeLayout
+          Id="Package\Load to Currency txt.Paths[Выход источника &quot;OLE DB&quot;]"
+          TopLeft="NaN,NaN">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="{assembly:Null}"
+              Start="0,0"
+              End="0,0">
+              <mssgle:Curve.Segments>
+                <assembly:Null />
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
