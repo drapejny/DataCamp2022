@@ -12,8 +12,8 @@
   DTS:LocaleID="8192"
   DTS:MaxErrorCount="0"
   DTS:ObjectName="loading_currency"
-  DTS:VersionBuild="36"
-  DTS:VersionGUID="{DA7484EB-F789-4990-B3CE-FE2B78A1062A}">
+  DTS:VersionBuild="37"
+  DTS:VersionGUID="{6D68810D-52BA-4325-883E-81C0DEB80FA5}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -756,39 +756,17 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="174.4,41.6"
-          Id="Package\Load to Currency_txt"
-          TopLeft="97.9999963243809,68.7666671694651" />
+          Size="183.2,41.6"
+          Id="Package\Create Table Currency"
+          TopLeft="90.833329723941,192.400001529058" />
         <NodeLayout
           Size="186.4,41.6"
           Id="Package\Load from Currency_txt"
           TopLeft="82.6999973177912,296.600001549721" />
         <NodeLayout
-          Size="183.2,41.6"
-          Id="Package\Create Table Currency"
-          TopLeft="90.833329723941,192.400001529058" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[{73ADF1DE-B881-4946-9F0B-E787F74B539A\}]"
-          TopLeft="179.166663520866,234.000001529058">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,62.6000000206629"
-              Start="0,0"
-              End="0,55.1000000206629">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,55.1000000206629" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          Size="174.4,41.6"
+          Id="Package\Load to Currency_txt"
+          TopLeft="97.9999963243809,68.7666671694651" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="183.816663024161,110.366667169465">
@@ -811,36 +789,20 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </Package>
-  <TaskHost
-    design-time-name="Package\Load to Currency_txt">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="162.4,41.6"
-          Id="Package\Load to Currency_txt\Source - Currency"
-          TopLeft="92.5000000000001,28.5" />
-        <NodeLayout
-          Size="198.4,41.6"
-          Id="Package\Load to Currency_txt\Destination - Currency_txt"
-          TopLeft="82.5,138.1" />
         <EdgeLayout
-          Id="Package\Load to Currency_txt.Paths[Выход источника &quot;OLE DB&quot;]"
-          TopLeft="177.7,70.1">
+          Id="Package.PrecedenceConstraints[{73ADF1DE-B881-4946-9F0B-E787F74B539A\}]"
+          TopLeft="179.166663520866,234.000001529058">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,68"
+              EndConnector="0,62.6000000206629"
               Start="0,0"
-              End="0,60.5">
+              End="0,55.1000000206629">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,60.5" />
+                    End="0,55.1000000206629" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -851,20 +813,7 @@
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load to Currency_txt\Source - Currency">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
+  </Package>
   <TaskHost
     design-time-name="Package\Load from Currency_txt">
     <LayoutInfo>
@@ -931,6 +880,57 @@
   </TaskHost>
   <PipelineComponentMetadata
     design-time-name="Package\Load from Currency_txt\Destination - Currency">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Load to Currency_txt">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="162.4,41.6"
+          Id="Package\Load to Currency_txt\Source - Currency"
+          TopLeft="92.5000000000001,28.5" />
+        <NodeLayout
+          Size="198.4,41.6"
+          Id="Package\Load to Currency_txt\Destination - Currency_txt"
+          TopLeft="82.5,138.1" />
+        <EdgeLayout
+          Id="Package\Load to Currency_txt.Paths[Выход источника &quot;OLE DB&quot;]"
+          TopLeft="177.7,70.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,68"
+              Start="0,0"
+              End="0,60.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,60.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load to Currency_txt\Source - Currency">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
