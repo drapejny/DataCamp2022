@@ -1,0 +1,277 @@
+FirstName,LastName,JobTitle,EmailAddress
+Ken,Sanchez,Chief Executive Officer,ken0@adventure-works.com
+Terri,Duffy,Vice President of Engineering,terri0@adventure-works.com
+Roberto,Tamburello,Engineering Manager,roberto0@adventure-works.com
+Rob,Walters,Senior Tool Designer,rob0@adventure-works.com
+Gail,Erickson,Design Engineer,gail0@adventure-works.com
+Jossef,Goldberg,Design Engineer,jossef0@adventure-works.com
+Dylan,Miller,Research and Development Manager,dylan0@adventure-works.com
+Diane,Margheim,Research and Development Engineer,diane1@adventure-works.com
+Gigi,Matthew,Research and Development Engineer,gigi0@adventure-works.com
+Michael,Raheem,Research and Development Manager,michael6@adventure-works.com
+Ovidiu,Cracium,Senior Tool Designer,ovidiu0@adventure-works.com
+Thierry,D'Hers,Tool Designer,thierry0@adventure-works.com
+Janice,Galvin,Tool Designer,janice0@adventure-works.com
+Michael,Sullivan,Senior Design Engineer,michael8@adventure-works.com
+Sharon,Salavaria,Design Engineer,sharon0@adventure-works.com
+David,Bradley,Marketing Manager,david0@adventure-works.com
+Kevin,Brown,Marketing Assistant,kevin0@adventure-works.com
+John,Wood,Marketing Specialist,john5@adventure-works.com
+Mary,Dempsey,Marketing Assistant,mary2@adventure-works.com
+Wanida,Benshoof,Marketing Assistant,wanida0@adventure-works.com
+Terry,Eminhizer,Marketing Specialist,terry0@adventure-works.com
+Sariya,Harnpadoungsataya,Marketing Specialist,sariya0@adventure-works.com
+Mary,Gibson,Marketing Specialist,mary0@adventure-works.com
+Jill,Williams,Marketing Specialist,jill0@adventure-works.com
+James,Hamilton,Vice President of Production,james1@adventure-works.com
+Peter,Krebs,Production Control Manager,peter0@adventure-works.com
+Jo,Brown,Production Supervisor - WC60,jo0@adventure-works.com
+Guy,Gilbert,Production Technician - WC60,guy1@adventure-works.com
+Mark,McArthur,Production Technician - WC60,mark1@adventure-works.com
+Britta,Simon,Production Technician - WC60,britta0@adventure-works.com
+Margie,Shoop,Production Technician - WC60,margie0@adventure-works.com
+Rebecca,Laszlo,Production Technician - WC60,rebecca0@adventure-works.com
+Annik,Stahl,Production Technician - WC60,annik0@adventure-works.com
+Suchitra,Mohan,Production Technician - WC60,suchitra0@adventure-works.com
+Brandon,Heidepriem,Production Technician - WC60,brandon0@adventure-works.com
+Jose,Lugo,Production Technician - WC60,jose0@adventure-works.com
+Chris,Okelberry,Production Technician - WC60,chris2@adventure-works.com
+Kim,Abercrombie,Production Technician - WC60,kim1@adventure-works.com
+Ed,Dudenhoefer,Production Technician - WC60,ed0@adventure-works.com
+JoLynn,Dobney,Production Supervisor - WC60,jolynn0@adventure-works.com
+Bryan,Baker,Production Technician - WC60,bryan0@adventure-works.com
+James,Kramer,Production Technician - WC60,james0@adventure-works.com
+Nancy,Anderson,Production Technician - WC60,nancy0@adventure-works.com
+Simon,Rapier,Production Technician - WC60,simon0@adventure-works.com
+Thomas,Michaels,Production Technician - WC60,thomas0@adventure-works.com
+Eugene,Kogan,Production Technician - WC60,eugene1@adventure-works.com
+Andrew,Hill,Production Supervisor - WC10,andrew0@adventure-works.com
+Ruth,Ellerbrock,Production Technician - WC10,ruth0@adventure-works.com
+Barry,Johnson,Production Technician - WC10,barry0@adventure-works.com
+Sidney,Higa,Production Technician - WC10,sidney0@adventure-works.com
+Jeffrey,Ford,Production Technician - WC10,jeffrey0@adventure-works.com
+Doris,Hartwig,Production Technician - WC10,doris0@adventure-works.com
+Diane,Glimp,Production Technician - WC10,diane0@adventure-works.com
+Bonnie,Kearney,Production Technician - WC10,bonnie0@adventure-works.com
+Taylor,Maxwell,Production Supervisor - WC50,taylor0@adventure-works.com
+Denise,Smith,Production Technician - WC50,denise0@adventure-works.com
+Frank,Miller,Production Technician - WC50,frank1@adventure-works.com
+Kendall,Keil,Production Technician - WC50,kendall0@adventure-works.com
+Bob,Hohman,Production Technician - WC50,bob0@adventure-works.com
+Pete,Male,Production Technician - WC50,pete0@adventure-works.com
+Diane,Tibbott,Production Technician - WC50,diane2@adventure-works.com
+John,Campbell,Production Supervisor - WC60,john0@adventure-works.com
+Maciej,Dusza,Production Technician - WC60,maciej0@adventure-works.com
+Michael,Zwilling,Production Technician - WC60,michael7@adventure-works.com
+Randy,Reeves,Production Technician - WC60,randy0@adventure-works.com
+Karan,Khanna,Production Technician - WC60,karan0@adventure-works.com
+Jay,Adams,Production Technician - WC60,jay0@adventure-works.com
+Charles,Fitzgerald,Production Technician - WC60,charles0@adventure-works.com
+Steve,Masters,Production Technician - WC60,steve0@adventure-works.com
+David,Ortiz,Production Technician - WC60,david2@adventure-works.com
+Michael,Ray,Production Supervisor - WC30,michael3@adventure-works.com
+Steven,Selikoff,Production Technician - WC30,steven0@adventure-works.com
+Carole,Poland,Production Technician - WC30,carole0@adventure-works.com
+Bjorn,Rettig,Production Technician - WC30,bjorn0@adventure-works.com
+Michiko,Osada,Production Technician - WC30,michiko0@adventure-works.com
+Carol,Philips,Production Technician - WC30,carol0@adventure-works.com
+Merav,Netz,Production Technician - WC30,merav0@adventure-works.com
+Reuben,D'sa,Production Supervisor - WC40,reuben0@adventure-works.com
+Eric,Brown,Production Technician - WC40,eric1@adventure-works.com
+Sandeep,Kaliyath,Production Technician - WC40,sandeep0@adventure-works.com
+Mihail,Frintu,Production Technician - WC40,mihail0@adventure-works.com
+Jack,Creasey,Production Technician - WC40,jack1@adventure-works.com
+Patrick,Cook,Production Technician - WC40,patrick1@adventure-works.com
+Frank,Martinez,Production Technician - WC40,frank3@adventure-works.com
+Brian,Goldstein,Production Technician - WC40,brian2@adventure-works.com
+Ryan,Cornelsen,Production Technician - WC40,ryan0@adventure-works.com
+Cristian,Petculescu,Production Supervisor - WC10,cristian0@adventure-works.com
+Betsy,Stadick,Production Technician - WC10,betsy0@adventure-works.com
+Patrick,Wedge,Production Technician - WC10,patrick0@adventure-works.com
+Danielle,Tiedt,Production Technician - WC10,danielle0@adventure-works.com
+Kimberly,Zimmerman,Production Technician - WC10,kimberly0@adventure-works.com
+Tom,Vande Velde,Production Technician - WC10,tom0@adventure-works.com
+Kok-Ho,Loh,Production Supervisor - WC50,kok-ho0@adventure-works.com
+Russell,Hunter,Production Technician - WC50,russell0@adventure-works.com
+Jim,Scardelis,Production Technician - WC50,jim0@adventure-works.com
+Elizabeth,Keyser,Production Technician - WC50,elizabeth0@adventure-works.com
+Mandar,Samant,Production Technician - WC50,mandar0@adventure-works.com
+Sameer,Tejani,Production Technician - WC50,sameer0@adventure-works.com
+Nuan,Yu,Production Technician - WC50,nuan0@adventure-works.com
+Lolan,Song,Production Technician - WC50,lolan0@adventure-works.com
+Houman,Pournasseh,Production Technician - WC50,houman0@adventure-works.com
+Zheng,Mu,Production Supervisor - WC10,zheng0@adventure-works.com
+Ebru,Ersan,Production Technician - WC10,ebru0@adventure-works.com
+Mary,Baker,Production Technician - WC10,mary1@adventure-works.com
+Kevin,Homer,Production Technician - WC10,kevin2@adventure-works.com
+John,Kane,Production Technician - WC10,john4@adventure-works.com
+Christopher,Hill,Production Technician - WC10,christopher0@adventure-works.com
+Jinghao,Liu,Production Supervisor - WC50,jinghao0@adventure-works.com
+Alice,Ciccu,Production Technician - WC50,alice0@adventure-works.com
+Jun,Cao,Production Technician - WC50,jun0@adventure-works.com
+Suroor,Fatima,Production Technician - WC50,suroor0@adventure-works.com
+John,Evans,Production Technician - WC50,john1@adventure-works.com
+Linda,Moschell,Production Technician - WC50,linda0@adventure-works.com
+Mindaugas,Krapauskas,Production Technician - WC50,mindaugas0@adventure-works.com
+Angela,Barbariol,Production Technician - WC50,angela0@adventure-works.com
+Michael,Patten,Production Technician - WC50,michael2@adventure-works.com
+Chad,Niswonger,Production Technician - WC50,chad0@adventure-works.com
+Don,Hall,Production Technician - WC50,don0@adventure-works.com
+Michael,Entin,Production Technician - WC50,michael4@adventure-works.com
+Kitti,Lertpiriyasuwat,Production Technician - WC50,kitti0@adventure-works.com
+Pilar,Ackerman,Shipping and Receiving Supervisor,pilar0@adventure-works.com
+Susan,Eaton,Stocker,susan0@adventure-works.com
+Vamsi,Kuppa,Shipping and Receiving Clerk,vamsi0@adventure-works.com
+Kim,Ralls,Stocker,kim0@adventure-works.com
+Matthias,Berndt,Shipping and Receiving Clerk,matthias0@adventure-works.com
+Jimmy,Bischoff,Stocker,jimmy0@adventure-works.com
+David,Hamilton,Production Supervisor - WC40,david4@adventure-works.com
+Paul,Komosinski,Production Technician - WC40,paul0@adventure-works.com
+Gary,Yukish,Production Technician - WC40,gary0@adventure-works.com
+Rob,Caron,Production Technician - WC40,rob1@adventure-works.com
+Baris,Cetinok,Production Technician - WC40,baris0@adventure-works.com
+Nicole,Holliday,Production Technician - WC40,nicole0@adventure-works.com
+Michael,Rothkugel,Production Technician - WC40,michael1@adventure-works.com
+Eric,Gubbels,Production Supervisor - WC20,eric0@adventure-works.com
+Ivo,Salmre,Production Technician - WC20,ivo0@adventure-works.com
+Sylvester,Valdez,Production Technician - WC20,sylvester0@adventure-works.com
+Anibal,Sousa,Production Technician - WC20,anibal0@adventure-works.com
+Samantha,Smith,Production Technician - WC20,samantha0@adventure-works.com
+Hung-Fu,Ting,Production Technician - WC20,hung-fu0@adventure-works.com
+Prasanna,Samarawickrama,Production Technician - WC20,prasanna0@adventure-works.com
+Min,Su,Production Technician - WC20,min0@adventure-works.com
+Olinda,Turner,Production Technician - WC20,olinda0@adventure-works.com
+Krishna,Sunkammurali,Production Technician - WC20,krishna0@adventure-works.com
+Paul,Singh,Production Technician - WC20,paul1@adventure-works.com
+Cynthia,Randall,Production Supervisor - WC30,cynthia0@adventure-works.com
+Jian Shuo,Wang,Production Technician - WC30,jianshuo0@adventure-works.com
+Sandra,Reategui Alayo,Production Technician - WC30,sandra0@adventure-works.com
+Jason,Watters,Production Technician - WC30,jason0@adventure-works.com
+Andy,Ruth,Production Technician - WC30,andy0@adventure-works.com
+Michael,Vanderhyde,Production Technician - WC30,michael5@adventure-works.com
+Rostislav,Shabalin,Production Technician - WC30,rostislav0@adventure-works.com
+Yuhong,Li,Production Supervisor - WC20,yuhong0@adventure-works.com
+Hanying,Feng,Production Technician - WC20,hanying0@adventure-works.com
+Raymond,Sam,Production Technician - WC20,raymond0@adventure-works.com
+Fadi,Fakhouri,Production Technician - WC20,fadi0@adventure-works.com
+Lane,Sacksteder,Production Technician - WC20,lane0@adventure-works.com
+Linda,Randall,Production Technician - WC20,linda1@adventure-works.com
+Shelley,Dyck,Production Technician - WC20,shelley0@adventure-works.com
+Terrence,Earls,Production Technician - WC20,terrence0@adventure-works.com
+Jeff,Hay,Production Supervisor - WC45,jeff0@adventure-works.com
+Kirk,Koenigsbauer,Production Technician - WC45,kirk0@adventure-works.com
+Laura,Steele,Production Technician - WC45,laura0@adventure-works.com
+Alex,Nayberg,Production Technician - WC45,alex0@adventure-works.com
+Andrew,Cencini,Production Technician - WC45,andrew1@adventure-works.com
+Chris,Preston,Production Technician - WC45,chris0@adventure-works.com
+Jack,Richins,Production Supervisor - WC30,jack0@adventure-works.com
+David,Johnson,Production Technician - WC30,david1@adventure-works.com
+Garrett,Young,Production Technician - WC30,garrett0@adventure-works.com
+Susan,Metters,Production Technician - WC30,susan1@adventure-works.com
+George,Li,Production Technician - WC30,george0@adventure-works.com
+David,Yalovsky,Production Technician - WC30,david3@adventure-works.com
+Marc,Ingle,Production Technician - WC30,marc0@adventure-works.com
+Eugene,Zabokritski,Production Technician - WC30,eugene0@adventure-works.com
+Benjamin,Martin,Production Technician - WC30,benjamin0@adventure-works.com
+Reed,Koch,Production Technician - WC30,reed0@adventure-works.com
+David,Lawrence,Production Technician - WC30,david7@adventure-works.com
+Russell,King,Production Technician - WC30,russell1@adventure-works.com
+John,Frum,Production Technician - WC30,john3@adventure-works.com
+Jan,Miksovsky,Production Technician - WC30,jan0@adventure-works.com
+Katie,McAskill-White,Production Supervisor - WC20,katie0@adventure-works.com
+Michael,Hines,Production Technician - WC20,michael0@adventure-works.com
+Nitin,Mirchandani,Production Technician - WC20,nitin0@adventure-works.com
+Barbara,Decker,Production Technician - WC20,barbara0@adventure-works.com
+John,Chen,Production Technician - WC20,john2@adventure-works.com
+Stefen,Hesse,Production Technician - WC20,stefen0@adventure-works.com
+Shane,Kim,Production Supervisor - WC45,shane0@adventure-works.com
+Yvonne,McKay,Production Technician - WC45,yvonne0@adventure-works.com
+Douglas,Hite,Production Technician - WC45,douglas0@adventure-works.com
+Janeth,Esteves,Production Technician - WC45,janeth0@adventure-works.com
+Robert,Rounthwaite,Production Technician - WC45,robert0@adventure-works.com
+Lionel,Penuchot,Production Technician - WC45,lionel0@adventure-works.com
+Brenda,Diaz,Production Supervisor - WC40,brenda0@adventure-works.com
+Alejandro,McGuel,Production Technician - WC40,alejandro0@adventure-works.com
+Fred,Northup,Production Technician - WC40,fred0@adventure-works.com
+Kevin,Liu,Production Technician - WC40,kevin1@adventure-works.com
+Shammi,Mohamed,Production Technician - WC40,shammi0@adventure-works.com
+Rajesh,Patel,Production Technician - WC40,rajesh0@adventure-works.com
+Lorraine,Nay,Production Technician - WC40,lorraine0@adventure-works.com
+Paula,Nartker,Production Technician - WC40,paula1@adventure-works.com
+Frank,Lee,Production Technician - WC40,frank0@adventure-works.com
+Brian,Lloyd,Production Technician - WC40,brian0@adventure-works.com
+Tawana,Nusbaum,Production Technician - WC40,tawana0@adventure-works.com
+Ken,Myer,Production Technician - WC40,ken1@adventure-works.com
+Gabe,Mares,Production Technician - WC40,gabe0@adventure-works.com
+Lori,Kane,Production Supervisor - WC45,lori0@adventure-works.com
+Stuart,Munson,Production Technician - WC45,stuart0@adventure-works.com
+Greg,Alderson,Production Technician - WC45,greg0@adventure-works.com
+Scott,Gode,Production Technician - WC45,scott0@adventure-works.com
+Kathie,Flood,Production Technician - WC45,kathie0@adventure-works.com
+Belinda,Newman,Production Technician - WC45,belinda0@adventure-works.com
+Hazem,Abolrous,Quality Assurance Manager,hazem0@adventure-works.com
+Peng,Wu,Quality Assurance Supervisor,peng0@adventure-works.com
+Sootha,Charncherngkha,Quality Assurance Technician,sootha0@adventure-works.com
+Andreas,Berglund,Quality Assurance Technician,andreas0@adventure-works.com
+Mark,Harrington,Quality Assurance Technician,mark0@adventure-works.com
+Sean,Alexander,Quality Assurance Technician,sean0@adventure-works.com
+Zainal,Arifin,Document Control Manager,zainal0@adventure-works.com
+Tengiz,Kharatishvili,Control Specialist,tengiz0@adventure-works.com
+Sean,Chai,Document Control Assistant,sean1@adventure-works.com
+Karen,Berge,Document Control Assistant,karen0@adventure-works.com
+Chris,Norred,Control Specialist,chris1@adventure-works.com
+A. Scott,Wright,Master Scheduler,ascott0@adventure-works.com
+Sairaj,Uddin,Scheduling Assistant,sairaj0@adventure-works.com
+William,Vong,Scheduling Assistant,william0@adventure-works.com
+Alan,Brewer,Scheduling Assistant,alan0@adventure-works.com
+Brian,LaMee,Scheduling Assistant,brian1@adventure-works.com
+Gary,Altman,Facilities Manager,gary1@adventure-works.com
+Christian,Kleinerman,Maintenance Supervisor,christian0@adventure-works.com
+Lori,Penor,Janitor,lori1@adventure-works.com
+Stuart,Macrae,Janitor,stuart1@adventure-works.com
+Jo,Berry,Janitor,jo1@adventure-works.com
+Pat,Coleman,Janitor,pat0@adventure-works.com
+Magnus,Hedlund,Facilities Administrative Assistant,magnus0@adventure-works.com
+Laura,Norman,Chief Financial Officer,laura1@adventure-works.com
+Paula,Barreto de Mattos,Human Resources Manager,paula0@adventure-works.com
+Grant,Culbertson,Human Resources Administrative Assistant,grant0@adventure-works.com
+Hao,Chen,Human Resources Administrative Assistant,hao0@adventure-works.com
+Vidur,Luthra,Recruiter,vidur0@adventure-works.com
+Mindy,Martin,Benefits Specialist,mindy0@adventure-works.com
+Willis,Johnson,Recruiter,willis0@adventure-works.com
+David,Liu,Accounts Manager,david6@adventure-works.com
+Deborah,Poe,Accounts Receivable Specialist,deborah0@adventure-works.com
+Candy,Spoon,Accounts Receivable Specialist,candy0@adventure-works.com
+Bryan,Walton,Accounts Receivable Specialist,bryan1@adventure-works.com
+Barbara,Moreland,Accountant,barbara1@adventure-works.com
+Dragan,Tomic,Accounts Payable Specialist,dragan0@adventure-works.com
+Janet,Sheperdigian,Accounts Payable Specialist,janet0@adventure-works.com
+Mike,Seamans,Accountant,mike0@adventure-works.com
+Wendy,Kahn,Finance Manager,wendy0@adventure-works.com
+Sheela,Word,Purchasing Manager,sheela0@adventure-works.com
+Mikael,Sandberg,Buyer,mikael0@adventure-works.com
+Arvind,Rao,Buyer,arvind0@adventure-works.com
+Linda,Meisner,Buyer,linda2@adventure-works.com
+Fukiko,Ogisu,Buyer,fukiko0@adventure-works.com
+Gordon,Hee,Buyer,gordon0@adventure-works.com
+Frank,Pellow,Buyer,frank2@adventure-works.com
+Eric,Kurjan,Buyer,eric2@adventure-works.com
+Erin,Hagens,Buyer,erin0@adventure-works.com
+Ben,Miller,Buyer,ben0@adventure-works.com
+Annette,Hill,Purchasing Assistant,annette0@adventure-works.com
+Reinout,Hillmann,Purchasing Assistant,reinout0@adventure-works.com
+David,Barber,Assistant to the Chief Financial Officer,david5@adventure-works.com
+Jean,Trenary,Information Services Manager,jean0@adventure-works.com
+Stephanie,Conroy,Network Manager,stephanie0@adventure-works.com
+Ashvini,Sharma,Network Administrator,ashvini0@adventure-works.com
+Peter,Connelly,Network Administrator,peter1@adventure-works.com
+Karen,Berg,Application Specialist,karen1@adventure-works.com
+Ramesh,Meyyappan,Application Specialist,ramesh0@adventure-works.com
+Dan,Bacon,Application Specialist,dan0@adventure-works.com
+Francois,Ajenstat,Database Administrator,francois0@adventure-works.com
+Dan,Wilson,Database Administrator,dan1@adventure-works.com
+Janaina,Bueno,Application Specialist,janaina0@adventure-works.com
+Brian,Welcker,Vice President of Sales,brian3@adventure-works.com
+Stephen,Jiang,North American Sales Manager,stephen0@adventure-works.com
+Syed,Abbas,Pacific Sales Manager,syed0@adventure-works.com
+Amy,Alberts,European Sales Manager,amy0@adventure-works.com

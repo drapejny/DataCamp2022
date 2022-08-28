@@ -11,11 +11,123 @@
   DTS:LocaleID="8192"
   DTS:ObjectName="HR_ETL"
   DTS:PackageType="5"
-  DTS:VersionBuild="77"
-  DTS:VersionGUID="{7EE23DA3-A5C9-49AB-B100-4A6FCF804D1A}">
+  DTS:VersionBuild="95"
+  DTS:VersionGUID="{10E1BCA1-7A53-4F92-8AD7-5D89ED63E1D0}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection EmpNotSales_txt]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{38FDE4E0-F2CC-49DE-B319-A9BBBCC48933}"
+      DTS:ObjectName="Flat File Connection EmpNotSales_txt">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="8192"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1251"
+          DTS:ConnectionString="C:\Users\Ann Slizh\Desktop\DataCamp2022\u3\lab_3\data\task3\EmpNotSales.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FirstName"
+              DTS:DTSID="{CA99BBA9-3CBB-4E57-AD28-D04B84D15357}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LastName"
+              DTS:DTSID="{E9AB734F-69DD-4C17-99D8-A4B16AA9DC73}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="JobTitle"
+              DTS:DTSID="{B2576E8B-2039-49C8-84BF-E4F75001B852}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EmailAddress"
+              DTS:DTSID="{0AB695B6-6697-48DE-8AAD-BC6314F57CB7}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection EmpSales_txt]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{7B6A8B81-8827-4EA5-918A-BEDEBF4E13D7}"
+      DTS:ObjectName="Flat File Connection EmpSales_txt">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="8192"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1251"
+          DTS:ConnectionString="C:\Users\Ann Slizh\Desktop\DataCamp2022\u3\lab_3\data\task3\EmpSales.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FirstName"
+              DTS:DTSID="{8056D360-AA6E-406A-8B58-98CCB0FFCC93}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LastName"
+              DTS:DTSID="{1BED9259-2241-49E6-B578-5B1705734101}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="JobTitle"
+              DTS:DTSID="{E65AF778-ECC9-4DE6-B957-779C7C85582C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EmailAddress"
+              DTS:DTSID="{2E667473-A423-4A5E-BC52-613D931F465C}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Flat Files Connection]"
       DTS:CreationName="FLATFILE"
@@ -142,7 +254,7 @@
       DTS:ObjectName="Data_Files_Directory">
       <DTS:Property
         DTS:DataType="8"
-        DTS:Name="ParameterValue">C:\Users\Ann Slizh\Desktop\DataCamp2022\u3\lab_3\sdfdata</DTS:Property>
+        DTS:Name="ParameterValue">C:\Users\Ann Slizh\Desktop\DataCamp2022\u3\lab_3\data\task2</DTS:Property>
     </DTS:PackageParameter>
   </DTS:PackageParameters>
   <DTS:Variables>
@@ -199,7 +311,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="SmtpPassword">
       <DTS:VariableValue
-        DTS:DataType="8">lnqjkzqetmkordnh</DTS:VariableValue>
+        DTS:DataType="8">lqekgjkdkylaqhoq</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -265,7 +377,7 @@
         <DTS:ObjectData>
           <ForEachFileEnumeratorProperties>
             <FEFEProperty
-              Folder="C:\Users\Ann Slizh\Desktop\DataCamp2022\u3\lab_3\sdfdata" />
+              Folder="C:\Users\Ann Slizh\Desktop\DataCamp2022\u3\lab_3\data\task2" />
             <FEFEProperty
               FileSpec="*.*" />
             <FEFEProperty
@@ -1070,8 +1182,8 @@
       <DTS:ForEachVariableMappings>
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{6FC1E28F-300E-477E-89D7-2447CB5A8935}"
-          DTS:ObjectName="{6FC1E28F-300E-477E-89D7-2447CB5A8935}"
+          DTS:DTSID="{ED756AF2-34F6-402F-A31E-B7F811D6DAEF}"
+          DTS:ObjectName="{ED756AF2-34F6-402F-A31E-B7F811D6DAEF}"
           DTS:ValueIndex="0"
           DTS:VariableName="User::FilePath" />
       </DTS:ForEachVariableMappings>
@@ -1735,6 +1847,649 @@ FROM     Person.Person AS p INNER JOIN
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
+      DTS:refId="Package\Load EmpSales_txt and EmpNotSales_txt"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Задача потока данных"
+      DTS:DTSID="{8F6C508A-76F0-4E68-A7B9-426233FA2483}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load EmpSales_txt and EmpNotSales_txt"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Load EmpSales_txt and EmpNotSales_txt\Condition Split"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Условное разбиение;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;0"
+              description="Распределяет строки данных по разным выходам в зависимости от содержимого данных. Используйте условие (выражения SSIS), чтобы указать распределяемые строки. Пример: разделение записей, которые необходимо очистить, от подготовленных к загрузке или распределение только подмножества записей."
+              name="Condition Split"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Load EmpSales_txt and EmpNotSales_txt\Condition Split.Inputs[Вход условного разбиения]"
+                  description="Ввод преобразования &quot;Условное разбиение&quot;"
+                  name="Вход условного разбиения">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load EmpSales_txt and EmpNotSales_txt\Condition Split.Inputs[Вход условного разбиения].Columns[JobTitle]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="JobTitle"
+                      lineageId="Package\Load EmpSales_txt and EmpNotSales_txt\Source - OLE DB EmployeesAW.Outputs[Выход источника &quot;OLE DB&quot;].Columns[JobTitle]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load EmpSales_txt and EmpNotSales_txt\Condition Split.Outputs[Sales Representative]"
+                  description="Вывод 1 преобразования &quot;Условное разбиение&quot;"
+                  errorOrTruncationOperation="Вычисление"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Sales Representative"
+                  synchronousInputId="Package\Load EmpSales_txt and EmpNotSales_txt\Condition Split.Inputs[Вход условного разбиения]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Указывает выражение. Версия этого выражения использует вместо имен столбцов идентификаторы журнала обращений и преобразований."
+                      name="Expression">#{Package\Load EmpSales_txt and EmpNotSales_txt\Source - OLE DB EmployeesAW.Outputs[Выход источника "OLE DB"].Columns[JobTitle]} == "Sales Representative"</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Задает понятную версию выражения. Эта версия выражения использует имена столбцов."
+                      expressionType="Notify"
+                      name="FriendlyExpression">JobTitle == "Sales Representative"</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Указывает положение условия в списке условий, который вычисляется преобразованием. Вычисление производится в порядке от меньшего к большему значению."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load EmpSales_txt and EmpNotSales_txt\Condition Split.Outputs[Выход по умолчанию условного разбиения]"
+                  description="Выход по умолчанию преобразования &quot;Условное разбиение&quot;"
+                  exclusionGroup="1"
+                  name="Выход по умолчанию условного разбиения"
+                  synchronousInputId="Package\Load EmpSales_txt and EmpNotSales_txt\Condition Split.Inputs[Вход условного разбиения]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load EmpSales_txt and EmpNotSales_txt\Condition Split.Outputs[Вывод ошибок условного разбиения]"
+                  description="Вывод ошибок преобразования &quot;Условное разбиение&quot;"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Вывод ошибок условного разбиения"
+                  synchronousInputId="Package\Load EmpSales_txt and EmpNotSales_txt\Condition Split.Inputs[Вход условного разбиения]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load EmpSales_txt and EmpNotSales_txt\Condition Split.Outputs[Вывод ошибок условного разбиения].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load EmpSales_txt and EmpNotSales_txt\Condition Split.Outputs[Вывод ошибок условного разбиения].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load EmpSales_txt and EmpNotSales_txt\Condition Split.Outputs[Вывод ошибок условного разбиения].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load EmpSales_txt and EmpNotSales_txt\Condition Split.Outputs[Вывод ошибок условного разбиения].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load EmpSales_txt and EmpNotSales_txt\Destination - Flat File EmpNotSales_txt"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Назначение &quot;Неструктурированный файл&quot;;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;1"
+              description="Назначение &quot;Неструктурированный файл&quot;"
+              localeId="8192"
+              name="Destination - Flat File EmpNotSales_txt"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Указывает, следует ли перезаписывать данные в целевой файл или добавлять их в его конец."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Задает текст, который записывается в целевой файл перед записью любых данных."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="Если ограничитель текста включен, указывает, будут ли добавляться escape-символы для ограничителя в данных, записываемых в конечный файл."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load EmpSales_txt and EmpNotSales_txt\Destination - Flat File EmpNotSales_txt.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection EmpNotSales_txt]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection EmpNotSales_txt]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load EmpSales_txt and EmpNotSales_txt\Destination - Flat File EmpNotSales_txt.Inputs[Вход назначения &quot;Неструктурированный файл&quot;]"
+                  hasSideEffects="true"
+                  name="Вход назначения &quot;Неструктурированный файл&quot;">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load EmpSales_txt and EmpNotSales_txt\Destination - Flat File EmpNotSales_txt.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].Columns[FirstName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="FirstName"
+                      externalMetadataColumnId="Package\Load EmpSales_txt and EmpNotSales_txt\Destination - Flat File EmpNotSales_txt.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[FirstName]"
+                      lineageId="Package\Load EmpSales_txt and EmpNotSales_txt\Source - OLE DB EmployeesAW.Outputs[Выход источника &quot;OLE DB&quot;].Columns[FirstName]" />
+                    <inputColumn
+                      refId="Package\Load EmpSales_txt and EmpNotSales_txt\Destination - Flat File EmpNotSales_txt.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].Columns[LastName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="LastName"
+                      externalMetadataColumnId="Package\Load EmpSales_txt and EmpNotSales_txt\Destination - Flat File EmpNotSales_txt.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[LastName]"
+                      lineageId="Package\Load EmpSales_txt and EmpNotSales_txt\Source - OLE DB EmployeesAW.Outputs[Выход источника &quot;OLE DB&quot;].Columns[LastName]" />
+                    <inputColumn
+                      refId="Package\Load EmpSales_txt and EmpNotSales_txt\Destination - Flat File EmpNotSales_txt.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].Columns[JobTitle]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="JobTitle"
+                      externalMetadataColumnId="Package\Load EmpSales_txt and EmpNotSales_txt\Destination - Flat File EmpNotSales_txt.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[JobTitle]"
+                      lineageId="Package\Load EmpSales_txt and EmpNotSales_txt\Source - OLE DB EmployeesAW.Outputs[Выход источника &quot;OLE DB&quot;].Columns[JobTitle]" />
+                    <inputColumn
+                      refId="Package\Load EmpSales_txt and EmpNotSales_txt\Destination - Flat File EmpNotSales_txt.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].Columns[EmailAddress]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="EmailAddress"
+                      externalMetadataColumnId="Package\Load EmpSales_txt and EmpNotSales_txt\Destination - Flat File EmpNotSales_txt.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[EmailAddress]"
+                      lineageId="Package\Load EmpSales_txt and EmpNotSales_txt\Lookup - EmailAddressesAW.Outputs[Вывод совпадений преобразования &quot;Уточняющий запрос&quot;].Columns[EmailAddress]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load EmpSales_txt and EmpNotSales_txt\Destination - Flat File EmpNotSales_txt.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[FirstName]"
+                      dataType="wstr"
+                      length="50"
+                      name="FirstName" />
+                    <externalMetadataColumn
+                      refId="Package\Load EmpSales_txt and EmpNotSales_txt\Destination - Flat File EmpNotSales_txt.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[LastName]"
+                      dataType="wstr"
+                      length="50"
+                      name="LastName" />
+                    <externalMetadataColumn
+                      refId="Package\Load EmpSales_txt and EmpNotSales_txt\Destination - Flat File EmpNotSales_txt.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[JobTitle]"
+                      dataType="wstr"
+                      length="50"
+                      name="JobTitle" />
+                    <externalMetadataColumn
+                      refId="Package\Load EmpSales_txt and EmpNotSales_txt\Destination - Flat File EmpNotSales_txt.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[EmailAddress]"
+                      dataType="wstr"
+                      length="50"
+                      name="EmailAddress" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Load EmpSales_txt and EmpNotSales_txt\Destination - Flat File EmpSales_txt"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Назначение &quot;Неструктурированный файл&quot;;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;1"
+              description="Назначение &quot;Неструктурированный файл&quot;"
+              localeId="8192"
+              name="Destination - Flat File EmpSales_txt"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Указывает, следует ли перезаписывать данные в целевой файл или добавлять их в его конец."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Задает текст, который записывается в целевой файл перед записью любых данных."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="Если ограничитель текста включен, указывает, будут ли добавляться escape-символы для ограничителя в данных, записываемых в конечный файл."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load EmpSales_txt and EmpNotSales_txt\Destination - Flat File EmpSales_txt.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection EmpSales_txt]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection EmpSales_txt]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load EmpSales_txt and EmpNotSales_txt\Destination - Flat File EmpSales_txt.Inputs[Вход назначения &quot;Неструктурированный файл&quot;]"
+                  hasSideEffects="true"
+                  name="Вход назначения &quot;Неструктурированный файл&quot;">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load EmpSales_txt and EmpNotSales_txt\Destination - Flat File EmpSales_txt.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].Columns[FirstName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="FirstName"
+                      externalMetadataColumnId="Package\Load EmpSales_txt and EmpNotSales_txt\Destination - Flat File EmpSales_txt.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[FirstName]"
+                      lineageId="Package\Load EmpSales_txt and EmpNotSales_txt\Source - OLE DB EmployeesAW.Outputs[Выход источника &quot;OLE DB&quot;].Columns[FirstName]" />
+                    <inputColumn
+                      refId="Package\Load EmpSales_txt and EmpNotSales_txt\Destination - Flat File EmpSales_txt.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].Columns[LastName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="LastName"
+                      externalMetadataColumnId="Package\Load EmpSales_txt and EmpNotSales_txt\Destination - Flat File EmpSales_txt.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[LastName]"
+                      lineageId="Package\Load EmpSales_txt and EmpNotSales_txt\Source - OLE DB EmployeesAW.Outputs[Выход источника &quot;OLE DB&quot;].Columns[LastName]" />
+                    <inputColumn
+                      refId="Package\Load EmpSales_txt and EmpNotSales_txt\Destination - Flat File EmpSales_txt.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].Columns[JobTitle]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="JobTitle"
+                      externalMetadataColumnId="Package\Load EmpSales_txt and EmpNotSales_txt\Destination - Flat File EmpSales_txt.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[JobTitle]"
+                      lineageId="Package\Load EmpSales_txt and EmpNotSales_txt\Source - OLE DB EmployeesAW.Outputs[Выход источника &quot;OLE DB&quot;].Columns[JobTitle]" />
+                    <inputColumn
+                      refId="Package\Load EmpSales_txt and EmpNotSales_txt\Destination - Flat File EmpSales_txt.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].Columns[EmailAddress]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="EmailAddress"
+                      externalMetadataColumnId="Package\Load EmpSales_txt and EmpNotSales_txt\Destination - Flat File EmpSales_txt.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[EmailAddress]"
+                      lineageId="Package\Load EmpSales_txt and EmpNotSales_txt\Lookup - EmailAddressesAW.Outputs[Вывод совпадений преобразования &quot;Уточняющий запрос&quot;].Columns[EmailAddress]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load EmpSales_txt and EmpNotSales_txt\Destination - Flat File EmpSales_txt.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[FirstName]"
+                      codePage="1251"
+                      dataType="str"
+                      length="50"
+                      name="FirstName" />
+                    <externalMetadataColumn
+                      refId="Package\Load EmpSales_txt and EmpNotSales_txt\Destination - Flat File EmpSales_txt.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[LastName]"
+                      codePage="1251"
+                      dataType="str"
+                      length="50"
+                      name="LastName" />
+                    <externalMetadataColumn
+                      refId="Package\Load EmpSales_txt and EmpNotSales_txt\Destination - Flat File EmpSales_txt.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[JobTitle]"
+                      codePage="1251"
+                      dataType="str"
+                      length="50"
+                      name="JobTitle" />
+                    <externalMetadataColumn
+                      refId="Package\Load EmpSales_txt and EmpNotSales_txt\Destination - Flat File EmpSales_txt.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[EmailAddress]"
+                      codePage="1251"
+                      dataType="str"
+                      length="50"
+                      name="EmailAddress" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Load EmpSales_txt and EmpNotSales_txt\Lookup - EmailAddressesAW"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Уточняющий запрос;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;6"
+              description="Присоединяет дополнительные столбцы к потоку данных путем поиска значений в таблице. Пример: соединение со столбцом &quot;employee id&quot; таблицы employees позволяет получить значения &quot;hire date&quot; и &quot;employee name&quot;. Рекомендуется воспользоваться этим преобразованием, если таблица подстановки не помещается в памяти."
+              name="Lookup - EmailAddressesAW"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Задает инструкцию SQL, которая формирует таблицу уточняющих запросов."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[EmailAddressesAW]</property>
+                <property
+                  dataType="System.String"
+                  description="Задает инструкцию SQL, которая использует параметры для формирования таблицы уточняющих запросов."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[EmailAddressesAW]) [refTable]
+where [refTable].[BusinessEntityID] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Указывает тип соединения, используемого для доступа к эталонному набору данных."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Указывает тип кэша таблицы уточняющих запросов."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Указывает, как преобразование &quot;Уточняющий запрос&quot; обрабатывает строки без совпадающих элементов в эталонном наборе данных."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Указывает долю кэша (в процентах), выделенную для строк без совпадающих элементов в эталонном наборе данных."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Максимальный объем памяти для кэша ссылок на 32-разрядной платформе."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Максимальный объем памяти для кэша ссылок на 64-разрядной платформе."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Указывает, следует ли ссылаться на метаданные в формате XML."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="EmailAddressId" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="BusinessEntityID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="EmailAddress" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Задает список идентификаторов журнала обращений и преобразований, сопоставляемый с параметрами, которые использует инструкция SQL в свойстве SQLCommand. Элементы списка разделяются точками с запятой."
+                  name="ParameterMap">#{Package\Load EmpSales_txt and EmpNotSales_txt\Source - OLE DB EmployeesAW.Outputs[Выход источника "OLE DB"].Columns[BusinessEntityID]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Указывает кодовую страницу столбца, используемую, когда недоступны сведения о кодовой странице из источника данных."
+                  name="DefaultCodePage">1251</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Определяет, должны ли повторяющиеся ключи в ссылочных данных обрабатываться как ошибки при использовании режима полного кэширования."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load EmpSales_txt and EmpNotSales_txt\Lookup - EmailAddressesAW.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[OLE DB Conncetion HumanResources]"
+                  connectionManagerRefId="Package.ConnectionManagers[OLE DB Conncetion HumanResources]"
+                  description="Диспетчер соединений, используемый для доступа к данным уточняющих запросов."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load EmpSales_txt and EmpNotSales_txt\Lookup - EmailAddressesAW.Inputs[Ввод преобразования &quot;Уточняющий запрос&quot;]"
+                  name="Ввод преобразования &quot;Уточняющий запрос&quot;">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load EmpSales_txt and EmpNotSales_txt\Lookup - EmailAddressesAW.Inputs[Ввод преобразования &quot;Уточняющий запрос&quot;].Columns[BusinessEntityID]"
+                      cachedDataType="i4"
+                      cachedName="BusinessEntityID"
+                      lineageId="Package\Load EmpSales_txt and EmpNotSales_txt\Source - OLE DB EmployeesAW.Outputs[Выход источника &quot;OLE DB&quot;].Columns[BusinessEntityID]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Указывает в ссылочной таблице столбец, который соединен с данным столбцом."
+                          name="JoinToReferenceColumn">BusinessEntityID</property>
+                        <property
+                          dataType="System.Null"
+                          description="Указывает в ссылочной таблице столбец, из которого копируется данный столбец."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load EmpSales_txt and EmpNotSales_txt\Lookup - EmailAddressesAW.Outputs[Вывод совпадений преобразования &quot;Уточняющий запрос&quot;]"
+                  errorOrTruncationOperation="Уточняющий запрос"
+                  exclusionGroup="1"
+                  name="Вывод совпадений преобразования &quot;Уточняющий запрос&quot;"
+                  synchronousInputId="Package\Load EmpSales_txt and EmpNotSales_txt\Lookup - EmailAddressesAW.Inputs[Ввод преобразования &quot;Уточняющий запрос&quot;]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load EmpSales_txt and EmpNotSales_txt\Lookup - EmailAddressesAW.Outputs[Вывод совпадений преобразования &quot;Уточняющий запрос&quot;].Columns[EmailAddress]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Копировать столбец"
+                      length="50"
+                      lineageId="Package\Load EmpSales_txt and EmpNotSales_txt\Lookup - EmailAddressesAW.Outputs[Вывод совпадений преобразования &quot;Уточняющий запрос&quot;].Columns[EmailAddress]"
+                      name="EmailAddress"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Указывает в ссылочной таблице столбец, из которого копируется данный столбец."
+                          name="CopyFromReferenceColumn">EmailAddress</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load EmpSales_txt and EmpNotSales_txt\Lookup - EmailAddressesAW.Outputs[Выход несовпадающих строк уточняющего запроса]"
+                  description="Вывод преобразования &quot;Уточняющий запрос&quot;, которое обрабатывает строки без совпадающих элементов в эталонном наборе данных. Используйте этот выход, если свойство NoMatchBehavior имеет значение &quot;Отправить строки без совпадающих элементов в выход несовпадающих строк&quot;."
+                  exclusionGroup="1"
+                  name="Выход несовпадающих строк уточняющего запроса"
+                  synchronousInputId="Package\Load EmpSales_txt and EmpNotSales_txt\Lookup - EmailAddressesAW.Inputs[Ввод преобразования &quot;Уточняющий запрос&quot;]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load EmpSales_txt and EmpNotSales_txt\Lookup - EmailAddressesAW.Outputs[Вывод ошибок преобразования &quot;Уточняющий запрос&quot;]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Вывод ошибок преобразования &quot;Уточняющий запрос&quot;"
+                  synchronousInputId="Package\Load EmpSales_txt and EmpNotSales_txt\Lookup - EmailAddressesAW.Inputs[Ввод преобразования &quot;Уточняющий запрос&quot;]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load EmpSales_txt and EmpNotSales_txt\Lookup - EmailAddressesAW.Outputs[Вывод ошибок преобразования &quot;Уточняющий запрос&quot;].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load EmpSales_txt and EmpNotSales_txt\Lookup - EmailAddressesAW.Outputs[Вывод ошибок преобразования &quot;Уточняющий запрос&quot;].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load EmpSales_txt and EmpNotSales_txt\Lookup - EmailAddressesAW.Outputs[Вывод ошибок преобразования &quot;Уточняющий запрос&quot;].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load EmpSales_txt and EmpNotSales_txt\Lookup - EmailAddressesAW.Outputs[Вывод ошибок преобразования &quot;Уточняющий запрос&quot;].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load EmpSales_txt and EmpNotSales_txt\Source - OLE DB EmployeesAW"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Источник &quot;OLE DB&quot;;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;7"
+              description="Источник &quot;OLE DB&quot;"
+              name="Source - OLE DB EmployeesAW"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Время ожидания команды, в секундах. Величина 0 означает неограниченное время ожидания."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Указывает имя объекта базы данных, используемого для открытия набора строк."
+                  name="OpenRowset">[dbo].[EmployeesAW]</property>
+                <property
+                  dataType="System.String"
+                  description="Указывает переменную, содержащую имя объекта базы данных, используемого для открытия набора строк."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Команда SQL для выполнения."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="Переменная, содержащая команду SQL для выполнения."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Указывает кодовую страницу столбца, используемую, когда недоступны сведения о кодовой странице из источника данных."
+                  name="DefaultCodePage">1251</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Вызывает безусловное использование значение свойства DefaultCodePage при описании символьных данных."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Указывает используемый режим доступа к базе данных."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Сопоставления между параметрами в команде SQL и переменными."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load EmpSales_txt and EmpNotSales_txt\Source - OLE DB EmployeesAW.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[OLE DB Conncetion HumanResources]"
+                  connectionManagerRefId="Package.ConnectionManagers[OLE DB Conncetion HumanResources]"
+                  description="Соединение OLE DB среды выполнения, используемое для доступа к базе данных."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Load EmpSales_txt and EmpNotSales_txt\Source - OLE DB EmployeesAW.Outputs[Выход источника &quot;OLE DB&quot;]"
+                  name="Выход источника &quot;OLE DB&quot;">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load EmpSales_txt and EmpNotSales_txt\Source - OLE DB EmployeesAW.Outputs[Выход источника &quot;OLE DB&quot;].Columns[BusinessEntityID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load EmpSales_txt and EmpNotSales_txt\Source - OLE DB EmployeesAW.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[BusinessEntityID]"
+                      lineageId="Package\Load EmpSales_txt and EmpNotSales_txt\Source - OLE DB EmployeesAW.Outputs[Выход источника &quot;OLE DB&quot;].Columns[BusinessEntityID]"
+                      name="BusinessEntityID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load EmpSales_txt and EmpNotSales_txt\Source - OLE DB EmployeesAW.Outputs[Выход источника &quot;OLE DB&quot;].Columns[FirstName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load EmpSales_txt and EmpNotSales_txt\Source - OLE DB EmployeesAW.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[FirstName]"
+                      length="50"
+                      lineageId="Package\Load EmpSales_txt and EmpNotSales_txt\Source - OLE DB EmployeesAW.Outputs[Выход источника &quot;OLE DB&quot;].Columns[FirstName]"
+                      name="FirstName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load EmpSales_txt and EmpNotSales_txt\Source - OLE DB EmployeesAW.Outputs[Выход источника &quot;OLE DB&quot;].Columns[LastName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load EmpSales_txt and EmpNotSales_txt\Source - OLE DB EmployeesAW.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[LastName]"
+                      length="50"
+                      lineageId="Package\Load EmpSales_txt and EmpNotSales_txt\Source - OLE DB EmployeesAW.Outputs[Выход источника &quot;OLE DB&quot;].Columns[LastName]"
+                      name="LastName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load EmpSales_txt and EmpNotSales_txt\Source - OLE DB EmployeesAW.Outputs[Выход источника &quot;OLE DB&quot;].Columns[JobTitle]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load EmpSales_txt and EmpNotSales_txt\Source - OLE DB EmployeesAW.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[JobTitle]"
+                      length="50"
+                      lineageId="Package\Load EmpSales_txt and EmpNotSales_txt\Source - OLE DB EmployeesAW.Outputs[Выход источника &quot;OLE DB&quot;].Columns[JobTitle]"
+                      name="JobTitle"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load EmpSales_txt and EmpNotSales_txt\Source - OLE DB EmployeesAW.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[BusinessEntityID]"
+                      dataType="i4"
+                      name="BusinessEntityID" />
+                    <externalMetadataColumn
+                      refId="Package\Load EmpSales_txt and EmpNotSales_txt\Source - OLE DB EmployeesAW.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[FirstName]"
+                      dataType="wstr"
+                      length="50"
+                      name="FirstName" />
+                    <externalMetadataColumn
+                      refId="Package\Load EmpSales_txt and EmpNotSales_txt\Source - OLE DB EmployeesAW.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[LastName]"
+                      dataType="wstr"
+                      length="50"
+                      name="LastName" />
+                    <externalMetadataColumn
+                      refId="Package\Load EmpSales_txt and EmpNotSales_txt\Source - OLE DB EmployeesAW.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[JobTitle]"
+                      dataType="wstr"
+                      length="50"
+                      name="JobTitle" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Load EmpSales_txt and EmpNotSales_txt\Source - OLE DB EmployeesAW.Outputs[Вывод ошибок источника &quot;OLE DB&quot;]"
+                  isErrorOut="true"
+                  name="Вывод ошибок источника &quot;OLE DB&quot;">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load EmpSales_txt and EmpNotSales_txt\Source - OLE DB EmployeesAW.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[BusinessEntityID]"
+                      dataType="i4"
+                      lineageId="Package\Load EmpSales_txt and EmpNotSales_txt\Source - OLE DB EmployeesAW.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[BusinessEntityID]"
+                      name="BusinessEntityID" />
+                    <outputColumn
+                      refId="Package\Load EmpSales_txt and EmpNotSales_txt\Source - OLE DB EmployeesAW.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[FirstName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Load EmpSales_txt and EmpNotSales_txt\Source - OLE DB EmployeesAW.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[FirstName]"
+                      name="FirstName" />
+                    <outputColumn
+                      refId="Package\Load EmpSales_txt and EmpNotSales_txt\Source - OLE DB EmployeesAW.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[LastName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Load EmpSales_txt and EmpNotSales_txt\Source - OLE DB EmployeesAW.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[LastName]"
+                      name="LastName" />
+                    <outputColumn
+                      refId="Package\Load EmpSales_txt and EmpNotSales_txt\Source - OLE DB EmployeesAW.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[JobTitle]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Load EmpSales_txt and EmpNotSales_txt\Source - OLE DB EmployeesAW.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[JobTitle]"
+                      name="JobTitle" />
+                    <outputColumn
+                      refId="Package\Load EmpSales_txt and EmpNotSales_txt\Source - OLE DB EmployeesAW.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load EmpSales_txt and EmpNotSales_txt\Source - OLE DB EmployeesAW.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load EmpSales_txt and EmpNotSales_txt\Source - OLE DB EmployeesAW.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load EmpSales_txt and EmpNotSales_txt\Source - OLE DB EmployeesAW.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Load EmpSales_txt and EmpNotSales_txt.Paths[Sales Representative]"
+              endId="Package\Load EmpSales_txt and EmpNotSales_txt\Destination - Flat File EmpSales_txt.Inputs[Вход назначения &quot;Неструктурированный файл&quot;]"
+              name="Sales Representative"
+              startId="Package\Load EmpSales_txt and EmpNotSales_txt\Condition Split.Outputs[Sales Representative]" />
+            <path
+              refId="Package\Load EmpSales_txt and EmpNotSales_txt.Paths[Вывод совпадений преобразования &quot;Уточняющий запрос&quot;]"
+              endId="Package\Load EmpSales_txt and EmpNotSales_txt\Condition Split.Inputs[Вход условного разбиения]"
+              name="Вывод совпадений преобразования &quot;Уточняющий запрос&quot;"
+              startId="Package\Load EmpSales_txt and EmpNotSales_txt\Lookup - EmailAddressesAW.Outputs[Вывод совпадений преобразования &quot;Уточняющий запрос&quot;]" />
+            <path
+              refId="Package\Load EmpSales_txt and EmpNotSales_txt.Paths[Выход источника &quot;OLE DB&quot;]"
+              endId="Package\Load EmpSales_txt and EmpNotSales_txt\Lookup - EmailAddressesAW.Inputs[Ввод преобразования &quot;Уточняющий запрос&quot;]"
+              name="Выход источника &quot;OLE DB&quot;"
+              startId="Package\Load EmpSales_txt and EmpNotSales_txt\Source - OLE DB EmployeesAW.Outputs[Выход источника &quot;OLE DB&quot;]" />
+            <path
+              refId="Package\Load EmpSales_txt and EmpNotSales_txt.Paths[Выход по умолчанию условного разбиения]"
+              endId="Package\Load EmpSales_txt and EmpNotSales_txt\Destination - Flat File EmpNotSales_txt.Inputs[Вход назначения &quot;Неструктурированный файл&quot;]"
+              name="Выход по умолчанию условного разбиения"
+              startId="Package\Load EmpSales_txt and EmpNotSales_txt\Condition Split.Outputs[Выход по умолчанию условного разбиения]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
       DTS:refId="Package\Send email about error"
       DTS:CreationName="Microsoft.ScriptTask"
       DTS:Description="Script Task"
@@ -1742,7 +2497,7 @@ FROM     Person.Person AS p INNER JOIN
       DTS:ExecutableType="Microsoft.ScriptTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Send email about error"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <ScriptProject
@@ -2452,7 +3207,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
       DTS:ExecutableType="Microsoft.ScriptTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Send email about success"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <ScriptProject
@@ -2461,6 +3216,228 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
           VSTAMinorVersion="0"
           Language="VisualBasic"
           ReadOnlyVariables="User::SmtpFrom,User::SmtpMessageSuccessBody,User::SmtpPassword,User::SmtpPort,User::SmtpServer,User::SmtpSuccessSubject,User::SmtpTo,User::SmtpUser">
+          <ProjectItem
+            Name="My Project\AssemblyInfo.vb"
+            Encoding="UTF8"><![CDATA[Imports System
+Imports System.Reflection
+Imports System.Runtime.InteropServices
+
+' General Information about an assembly is controlled through the following 
+' set of attributes. Change these attribute values to modify the information
+' associated with an assembly.
+
+' Review the values of the assembly attributes
+
+<Assembly: AssemblyTitle("ST_ef6b575c17644b808173653f741b5f20")> 
+<Assembly: AssemblyDescription("")> 
+<Assembly: AssemblyCompany("")> 
+<Assembly: AssemblyProduct("ST_ef6b575c17644b808173653f741b5f20")> 
+<Assembly: AssemblyCopyright("Copyright @  2022")> 
+<Assembly: AssemblyTrademark("")> 
+<Assembly: CLSCompliant(True)> 
+
+<Assembly: ComVisible(False)> 
+
+'The following GUID is for the ID of the typelib if this project is exposed to COM
+<Assembly: Guid("95ccff2d-f331-4a1c-a235-91b673a9ccde")> 
+
+' Version information for an assembly consists of the following four values:
+'
+'      Major Version
+'      Minor Version 
+'      Build Number
+'      Revision
+'
+' You can specify all the values or you can default the Build and Revision Numbers 
+' by using the '*' as shown below:
+' <Assembly: AssemblyVersion("1.0.*")>
+
+<Assembly: AssemblyVersion("1.0.0.0")> 
+<Assembly: AssemblyFileVersion("1.0.0.0")> ]]></ProjectItem>
+          <ProjectItem
+            Name="ST_ef6b575c17644b808173653f741b5f20.vbproj"
+            Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6eb9fa7f-c7e7-490b-81c1-4c9d206b259c}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>My Project</AppDesignerFolder>
+    <RootNamespace>ST_ef6b575c17644b808173653f741b5f20</RootNamespace>
+    <AssemblyName>ST_ef6b575c17644b808173653f741b5f20</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>true</ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>.\bin\Debug\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <OutputPath>.\bin\Release\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.SqlServer.ManagedDTS, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.ScriptTask, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AppDesigner Include="My Project\" />
+    <Compile Include="My Project\AssemblyInfo.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ScriptMain.vb">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
+  <!-- Include the build rules for a VB project.-->
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}">
+        <ProjectProperties HostName="ScriptTask"
+                           HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}"
+                           ApplicationType="usd"
+                           Language="vb"
+                           TemplatesPath=""
+                           DebugInfoCommandLine=""
+                           DebugInfoWorkingDir=""
+                           IconImageList=""/>
+
+        <Host Name="ScriptTask" IconIndex="">
+        </Host>
+        <ProjectClient>
+          <HostIdentifier>SSIS_ST150</HostIdentifier>
+        </ProjectClient>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>]]></ProjectItem>
+          <ProjectItem
+            Name="My Project\Settings.settings"
+            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)" GeneratedClassNamespace="$safeprojectname" GeneratedClassName="MySettings">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
+          <ProjectItem
+            Name="My Project\Settings.Designer.vb"
+            Encoding="UTF8"><![CDATA['------------------------------------------------------------------------------
+' <autogenerated>
+'     This code was generated by a tool.
+'
+'     Changes to this file may cause incorrect behavior and will be lost if
+'     the code is regenerated.
+' </autogenerated>
+'------------------------------------------------------------------------------
+
+Option Strict Off
+Option Explicit On
+
+
+
+Partial Friend NotInheritable Class MySettings
+    Inherits System.Configuration.ApplicationSettingsBase
+
+    Private Shared m_Value As MySettings
+
+    Private Shared m_SyncObject As Object = New Object
+
+    <System.Diagnostics.DebuggerNonUserCode()> _
+    Public Shared ReadOnly Property Value() As MySettings
+        Get
+            If (MySettings.m_Value Is Nothing) Then
+                System.Threading.Monitor.Enter(MySettings.m_SyncObject)
+                If (MySettings.m_Value Is Nothing) Then
+                    Try
+                        MySettings.m_Value = New MySettings
+                    Finally
+                        System.Threading.Monitor.Exit(MySettings.m_SyncObject)
+                    End Try
+                End If
+            End If
+            Return MySettings.m_Value
+        End Get
+    End Property
+End Class]]></ProjectItem>
+          <ProjectItem
+            Name="Project"
+            Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="3.0" schemaVersion="1.0">
+  <msb:PropertyGroup>
+    <msb:Language>msBuild</msb:Language>
+    <msb:CodeName>ST_ef6b575c17644b808173653f741b5f20</msb:CodeName>
+    <msb:DisplayName>ST_ef6b575c17644b808173653f741b5f20</msb:DisplayName>
+    <msb:ProjectId>{58C4A44E-2EB8-4FDA-8993-D2925E2809FA}</msb:ProjectId>
+  </msb:PropertyGroup>
+  <msb:ItemGroup>
+    <msb:Project Include="ST_ef6b575c17644b808173653f741b5f20.vbproj" />
+    <msb:File Include="My Project\Settings.Designer.vb" />
+    <msb:File Include="My Project\AssemblyInfo.vb" />
+    <msb:File Include="ScriptMain.vb" />
+    <msb:File Include="My Project\Resources.resx" />
+    <msb:File Include="My Project\Resources.Designer.vb" />
+    <msb:File Include="My Project\Settings.settings" />
+  </msb:ItemGroup>
+</c:Project>]]></ProjectItem>
           <ProjectItem
             Name="ScriptMain.vb"
             Encoding="UTF8"><![CDATA[#Region "Help:  Introduction to the script task"
@@ -2581,228 +3558,6 @@ Partial Public Class ScriptMain
 #End Region
 
 End Class]]></ProjectItem>
-          <ProjectItem
-            Name="My Project\Settings.settings"
-            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)" GeneratedClassNamespace="$safeprojectname" GeneratedClassName="MySettings">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
-          <ProjectItem
-            Name="ST_ef6b575c17644b808173653f741b5f20.vbproj"
-            Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <PropertyGroup>
-    <ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>8.0.30703</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{6eb9fa7f-c7e7-490b-81c1-4c9d206b259c}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>My Project</AppDesignerFolder>
-    <RootNamespace>ST_ef6b575c17644b808173653f741b5f20</RootNamespace>
-    <AssemblyName>ST_ef6b575c17644b808173653f741b5f20</AssemblyName>
-    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>true</ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>
-  </PropertyGroup>
-
-  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>.\bin\Debug\</OutputPath>
-    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
-    <DefineDebug>true</DefineDebug>
-    <DefineTrace>true</DefineTrace>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-
-  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-    <DebugSymbols>false</DebugSymbols>
-    <Optimize>true</Optimize>
-    <OutputPath>.\bin\Release\</OutputPath>
-    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
-    <DefineDebug>false</DefineDebug>
-    <DefineTrace>true</DefineTrace>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-
-  <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
-    <Reference Include="Microsoft.SqlServer.ManagedDTS, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
-    <Reference Include="Microsoft.SqlServer.ScriptTask, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Import Include="Microsoft.VisualBasic" />
-    <Import Include="System" />
-    <Import Include="System.Collections" />
-    <Import Include="System.Data" />
-    <Import Include="System.Diagnostics" />
-    <Import Include="System.Windows.Forms" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <AppDesigner Include="My Project\" />
-    <Compile Include="My Project\AssemblyInfo.vb">
-      <SubType>Code</SubType>
-    </Compile>
-    <EmbeddedResource Include="My Project\Resources.resx">
-      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
-      <CustomToolNamespace>My.Resources</CustomToolNamespace>
-    </EmbeddedResource>
-    <Compile Include="My Project\Resources.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <None Include="My Project\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
-    </None>
-    <Compile Include="My Project\Settings.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="ScriptMain.vb">
-      <SubType>Code</SubType>
-    </Compile>
-  </ItemGroup>
-
-  <!-- Include the build rules for a VB project.-->
-  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
-
-  <ProjectExtensions>
-    <VisualStudio>
-      <FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}">
-        <ProjectProperties HostName="ScriptTask"
-                           HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}"
-                           ApplicationType="usd"
-                           Language="vb"
-                           TemplatesPath=""
-                           DebugInfoCommandLine=""
-                           DebugInfoWorkingDir=""
-                           IconImageList=""/>
-
-        <Host Name="ScriptTask" IconIndex="">
-        </Host>
-        <ProjectClient>
-          <HostIdentifier>SSIS_ST150</HostIdentifier>
-        </ProjectClient>
-      </FlavorProperties>
-    </VisualStudio>
-  </ProjectExtensions>
-</Project>]]></ProjectItem>
-          <ProjectItem
-            Name="My Project\AssemblyInfo.vb"
-            Encoding="UTF8"><![CDATA[Imports System
-Imports System.Reflection
-Imports System.Runtime.InteropServices
-
-' General Information about an assembly is controlled through the following 
-' set of attributes. Change these attribute values to modify the information
-' associated with an assembly.
-
-' Review the values of the assembly attributes
-
-<Assembly: AssemblyTitle("ST_ef6b575c17644b808173653f741b5f20")> 
-<Assembly: AssemblyDescription("")> 
-<Assembly: AssemblyCompany("")> 
-<Assembly: AssemblyProduct("ST_ef6b575c17644b808173653f741b5f20")> 
-<Assembly: AssemblyCopyright("Copyright @  2022")> 
-<Assembly: AssemblyTrademark("")> 
-<Assembly: CLSCompliant(True)> 
-
-<Assembly: ComVisible(False)> 
-
-'The following GUID is for the ID of the typelib if this project is exposed to COM
-<Assembly: Guid("95ccff2d-f331-4a1c-a235-91b673a9ccde")> 
-
-' Version information for an assembly consists of the following four values:
-'
-'      Major Version
-'      Minor Version 
-'      Build Number
-'      Revision
-'
-' You can specify all the values or you can default the Build and Revision Numbers 
-' by using the '*' as shown below:
-' <Assembly: AssemblyVersion("1.0.*")>
-
-<Assembly: AssemblyVersion("1.0.0.0")> 
-<Assembly: AssemblyFileVersion("1.0.0.0")> ]]></ProjectItem>
-          <ProjectItem
-            Name="My Project\Settings.Designer.vb"
-            Encoding="UTF8"><![CDATA['------------------------------------------------------------------------------
-' <autogenerated>
-'     This code was generated by a tool.
-'
-'     Changes to this file may cause incorrect behavior and will be lost if
-'     the code is regenerated.
-' </autogenerated>
-'------------------------------------------------------------------------------
-
-Option Strict Off
-Option Explicit On
-
-
-
-Partial Friend NotInheritable Class MySettings
-    Inherits System.Configuration.ApplicationSettingsBase
-
-    Private Shared m_Value As MySettings
-
-    Private Shared m_SyncObject As Object = New Object
-
-    <System.Diagnostics.DebuggerNonUserCode()> _
-    Public Shared ReadOnly Property Value() As MySettings
-        Get
-            If (MySettings.m_Value Is Nothing) Then
-                System.Threading.Monitor.Enter(MySettings.m_SyncObject)
-                If (MySettings.m_Value Is Nothing) Then
-                    Try
-                        MySettings.m_Value = New MySettings
-                    Finally
-                        System.Threading.Monitor.Exit(MySettings.m_SyncObject)
-                    End Try
-                End If
-            End If
-            Return MySettings.m_Value
-        End Get
-    End Property
-End Class]]></ProjectItem>
-          <ProjectItem
-            Name="Project"
-            Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
-<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="3.0" schemaVersion="1.0">
-  <msb:PropertyGroup>
-    <msb:Language>msBuild</msb:Language>
-    <msb:CodeName>ST_ef6b575c17644b808173653f741b5f20</msb:CodeName>
-    <msb:DisplayName>ST_ef6b575c17644b808173653f741b5f20</msb:DisplayName>
-    <msb:ProjectId>{58C4A44E-2EB8-4FDA-8993-D2925E2809FA}</msb:ProjectId>
-  </msb:PropertyGroup>
-  <msb:ItemGroup>
-    <msb:Project Include="ST_ef6b575c17644b808173653f741b5f20.vbproj" />
-    <msb:File Include="My Project\Settings.Designer.vb" />
-    <msb:File Include="My Project\AssemblyInfo.vb" />
-    <msb:File Include="ScriptMain.vb" />
-    <msb:File Include="My Project\Resources.resx" />
-    <msb:File Include="My Project\Resources.Designer.vb" />
-    <msb:File Include="My Project\Settings.settings" />
-  </msb:ItemGroup>
-</c:Project>]]></ProjectItem>
           <ProjectItem
             Name="My Project\Resources.resx"
             Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -3193,7 +3948,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate tables after error"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -3219,6 +3974,14 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
       DTS:To="Package\Load EmployeesAW" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 10]"
+      DTS:CreationName=""
+      DTS:DTSID="{5ED077AF-2F43-4D27-8EAB-631B20414B44}"
+      DTS:From="Package\Send email about success"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 10"
+      DTS:To="Package\Load EmpSales_txt and EmpNotSales_txt" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
@@ -3308,9 +4071,29 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
           Id="Package\Foreach File Loop Container"
           TopLeft="34.1666653090056,124.900000960827" />
         <NodeLayout
+          Size="196,41.6"
+          Id="Package\Load EmailAddressesAW"
+          TopLeft="587.685161832675,103.422223044148" />
+        <NodeLayout
+          Size="172.8,41.6"
+          Id="Package\Load EmployeesAW"
+          TopLeft="367.407392807949,166.303705025367" />
+        <NodeLayout
+          Size="184,41.6"
+          Id="Package\Send email about error"
+          TopLeft="744.444414862881,387.111114187594" />
+        <NodeLayout
+          Size="209.6,46.4"
+          Id="Package\Send email about success"
+          TopLeft="251.111101132852,360.24444730741" />
+        <NodeLayout
           Size="150.4,41.6"
           Id="Package\Truncate tables"
           TopLeft="349.72220832551,18.2000001446406" />
+        <NodeLayout
+          Size="198.4,41.6"
+          Id="Package\Truncate tables after error"
+          TopLeft="743.518488973748,302.370372773394" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="389.32220832551,59.8000001446406">
@@ -3345,10 +4128,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="172.8,41.6"
-          Id="Package\Load EmployeesAW"
-          TopLeft="367.407392807949,166.303705025367" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
           TopLeft="424.92220832551,59.8000001446406">
@@ -3383,10 +4162,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="196,41.6"
-          Id="Package\Load EmailAddressesAW"
-          TopLeft="587.685161832675,103.422223044148" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
           TopLeft="460.52220832551,59.8000001446406">
@@ -3421,86 +4196,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="184,41.6"
-          Id="Package\Send email about error"
-          TopLeft="744.444414862881,387.111114187594" />
-        <NodeLayout
-          Size="209.6,46.4"
-          Id="Package\Send email about success"
-          TopLeft="249.444434532413,390.577780881811" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 6]"
-          TopLeft="137.099998642339,261.700000960827">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="166.744435890074,128.877779920984"
-              Start="0,0"
-              End="166.744435890074,121.377779920984">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,68.8724093067551" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,68.8724093067551"
-                    Point2="0,72.8724093067551"
-                    Point3="4,72.8724093067551" />
-                  <mssgle:LineSegment
-                    End="162.744435890074,72.8724093067551" />
-                  <mssgle:CubicBezierSegment
-                    Point1="162.744435890074,72.8724093067551"
-                    Point2="166.744435890074,72.8724093067551"
-                    Point3="166.744435890074,76.8724093067551" />
-                  <mssgle:LineSegment
-                    End="166.744435890074,121.377779920984" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 7]"
-          TopLeft="426.340726141283,207.903705025367">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-72.0962916088696,182.674075856444"
-              Start="0,0"
-              End="-72.0962916088696,175.174075856444">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,91.2603610678145" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,91.2603610678145"
-                    Point2="0,95.2603610678145"
-                    Point3="-4,95.2603610678145" />
-                  <mssgle:LineSegment
-                    End="-68.0962916088696,95.2603610678145" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-68.0962916088696,95.2603610678145"
-                    Point2="-72.0962916088696,95.2603610678145"
-                    Point3="-72.0962916088696,99.2603610678145" />
-                  <mssgle:LineSegment
-                    End="-72.0962916088696,175.174075856444" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="198.4,41.6"
-          Id="Package\Truncate tables after error"
-          TopLeft="743.518488973748,302.370372773394" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
           TopLeft="236.033331975672,261.700000960827">
@@ -3574,19 +4269,31 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 9]"
-          TopLeft="839.581451918315,343.970372773394">
+          Id="Package.PrecedenceConstraints[Constraint 5]"
+          TopLeft="654.351828499342,145.022223044148">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,43.1407414141999"
+              EndConnector="-248.040727366489,215.222224263262"
               Start="0,0"
-              End="0,35.6407414141999">
+              End="-248.040727366489,207.722224263262">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,35.6407414141999" />
+                    End="0,118.07356849016" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,118.07356849016"
+                    Point2="0,122.07356849016"
+                    Point3="-4,122.07356849016" />
+                  <mssgle:LineSegment
+                    End="-244.040727366489,122.07356849016" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-244.040727366489,122.07356849016"
+                    Point2="-248.040727366489,122.07356849016"
+                    Point3="-248.040727366489,126.07356849016" />
+                  <mssgle:LineSegment
+                    End="-248.040727366489,207.722224263262" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3596,31 +4303,65 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="685.685161832675,145.022223044148">
+          Id="Package.PrecedenceConstraints[Constraint 6]"
+          TopLeft="137.099998642339,261.700000960827">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-281.040727300262,245.555557837663"
+              EndConnector="168.411102490513,98.544446346583"
               Start="0,0"
-              End="-281.040727300262,238.055557837663">
+              End="168.411102490513,91.044446346583">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,177.869348396672" />
+                    End="0,51.7207862633774" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,177.869348396672"
-                    Point2="0,181.869348396672"
-                    Point3="-4,181.869348396672" />
+                    Point1="0,51.7207862633774"
+                    Point2="0,55.7207862633774"
+                    Point3="4,55.7207862633774" />
                   <mssgle:LineSegment
-                    End="-277.040727300262,181.869348396672" />
+                    End="164.411102490513,55.7207862633774" />
                   <mssgle:CubicBezierSegment
-                    Point1="-277.040727300262,181.869348396672"
-                    Point2="-281.040727300262,181.869348396672"
-                    Point3="-281.040727300262,185.869348396672" />
+                    Point1="164.411102490513,55.7207862633774"
+                    Point2="168.411102490513,55.7207862633774"
+                    Point3="168.411102490513,59.7207862633774" />
                   <mssgle:LineSegment
-                    End="-281.040727300262,238.055557837663" />
+                    End="168.411102490513,91.044446346583" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 7]"
+          TopLeft="426.340726141282,207.903705025367">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-70.42962500843,152.340742282043"
+              Start="0,0"
+              End="-70.42962500843,144.840742282043">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,57.7748698061128" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,57.7748698061128"
+                    Point2="0,61.7748698061128"
+                    Point3="-4,61.7748698061128" />
+                  <mssgle:LineSegment
+                    End="-66.42962500843,61.7748698061128" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-66.42962500843,61.7748698061128"
+                    Point2="-70.42962500843,61.7748698061128"
+                    Point3="-70.42962500843,65.7748698061128" />
+                  <mssgle:LineSegment
+                    End="-70.42962500843,144.840742282043" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3665,6 +4406,54 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 9]"
+          TopLeft="839.581451918315,343.970372773394">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,43.1407414141999"
+              Start="0,0"
+              End="0,35.6407414141999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.6407414141999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="272,41.6"
+          Id="Package\Load EmpSales_txt and EmpNotSales_txt"
+          TopLeft="217.59258394624,457.185188521868" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 10]"
+          TopLeft="354.751842539546,406.64444730741">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,50.540741214458"
+              Start="0,0"
+              End="0,43.040741214458">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.040741214458" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -3672,7 +4461,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
     design-time-name="Package\Foreach File Loop Container\Load Flat Files into EmployeesExternal">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="229.6,41.6"
           Id="Package\Foreach File Loop Container\Load Flat Files into EmployeesExternal\Destination - EmployeesExternal"
@@ -3726,7 +4515,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-8,18.25,16,16"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -3734,6 +4525,70 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
   </TaskHost>
   <PipelineComponentMetadata
     design-time-name="Package\Foreach File Loop Container\Load Flat Files into EmployeesExternal\Destination - EmployeesExternal">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Load EmailAddressesAW">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="223.2,41.6"
+          Id="Package\Load EmailAddressesAW\Source - Person_EmailAddress"
+          TopLeft="217,55" />
+        <NodeLayout
+          Size="231.2,41.6"
+          Id="Package\Load EmailAddressesAW\Destination - EmailAddressesAW"
+          TopLeft="215,159" />
+        <EdgeLayout
+          Id="Package\Load EmailAddressesAW.Paths[Выход источника &quot;OLE DB&quot;]"
+          TopLeft="329.6,96.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,62.4"
+              Start="0,0"
+              End="0,54.9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,54.9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load EmailAddressesAW\Destination - EmailAddressesAW">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load EmailAddressesAW\Source - Person_EmailAddress">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -3796,14 +4651,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Load EmployeesAW\Source - Joined HumanResources_Employee and Person_Person">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Load EmployeesAW\Destination - EmployeesAW">
     <Properties>
       <Property>
@@ -3816,33 +4663,41 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load EmployeesAW\Source - Joined HumanResources_Employee and Person_Person">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
-    design-time-name="Package\Load EmailAddressesAW">
+    design-time-name="Package\Load EmpSales_txt and EmpNotSales_txt">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="223.2,41.6"
-          Id="Package\Load EmailAddressesAW\Source - Person_EmailAddress"
-          TopLeft="217,55" />
+          Size="229.6,41.6"
+          Id="Package\Load EmpSales_txt and EmpNotSales_txt\Source - OLE DB EmployeesAW"
+          TopLeft="328,64" />
         <NodeLayout
-          Size="231.2,41.6"
-          Id="Package\Load EmailAddressesAW\Destination - EmailAddressesAW"
-          TopLeft="215,159" />
+          Size="213.6,41.6"
+          Id="Package\Load EmpSales_txt and EmpNotSales_txt\Lookup - EmailAddressesAW"
+          TopLeft="340,134" />
         <EdgeLayout
-          Id="Package\Load EmailAddressesAW.Paths[Выход источника &quot;OLE DB&quot;]"
-          TopLeft="329.6,96.6">
+          Id="Package\Load EmpSales_txt and EmpNotSales_txt.Paths[Выход источника &quot;OLE DB&quot;]"
+          TopLeft="444.8,105.6">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,62.4"
+              EndConnector="0,28.4"
               Start="0,0"
-              End="0,54.9">
+              End="0,20.9">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,54.9" />
+                    End="0,20.9" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3851,11 +4706,119 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="145.6,41.6"
+          Id="Package\Load EmpSales_txt and EmpNotSales_txt\Condition Split"
+          TopLeft="373,236" />
+        <EdgeLayout
+          Id="Package\Load EmpSales_txt and EmpNotSales_txt.Paths[Вывод совпадений преобразования &quot;Уточняющий запрос&quot;]"
+          TopLeft="446.3,175.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.4"
+              Start="0,0"
+              End="0,52.9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-134.68986328125,20.45,269.3797265625,12"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="243.2,41.6"
+          Id="Package\Load EmpSales_txt and EmpNotSales_txt\Destination - Flat File EmpSales_txt"
+          TopLeft="137,331" />
+        <EdgeLayout
+          Id="Package\Load EmpSales_txt and EmpNotSales_txt.Paths[Sales Representative]"
+          TopLeft="422.866666666667,277.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-164.266666666667,53.4000000000001"
+              Start="0,0"
+              End="-164.266666666667,45.9000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.7082608695653" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.7082608695653"
+                    Point2="0,21.7082608695653"
+                    Point3="-4,21.7082608695653" />
+                  <mssgle:LineSegment
+                    End="-160.266666666667,21.7082608695653" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-160.266666666667,21.7082608695653"
+                    Point2="-164.266666666667,21.7082608695653"
+                    Point3="-164.266666666667,25.7082608695653" />
+                  <mssgle:LineSegment
+                    End="-164.266666666667,45.9000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-128.605345052083,26.7082608695653,92.9440234375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="260,41.6"
+          Id="Package\Load EmpSales_txt and EmpNotSales_txt\Destination - Flat File EmpNotSales_txt"
+          TopLeft="489,331.2" />
+        <EdgeLayout
+          Id="Package\Load EmpSales_txt and EmpNotSales_txt.Paths[Выход по умолчанию условного разбиения]"
+          TopLeft="468.733333333333,277.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="150.266666666667,53.6"
+              Start="0,0"
+              End="150.266666666667,46.1">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.7895652173913" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.7895652173913"
+                    Point2="0,21.7895652173913"
+                    Point3="4,21.7895652173913" />
+                  <mssgle:LineSegment
+                    End="146.266666666667,21.7895652173913" />
+                  <mssgle:CubicBezierSegment
+                    Point1="146.266666666667,21.7895652173913"
+                    Point2="150.266666666667,21.7895652173913"
+                    Point3="150.266666666667,25.7895652173913" />
+                  <mssgle:LineSegment
+                    End="150.266666666667,46.1" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-24.6701432291666,26.7895652173913,199.606953125,11.6533203125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Load EmailAddressesAW\Source - Person_EmailAddress">
+    design-time-name="Package\Load EmpSales_txt and EmpNotSales_txt\Source - OLE DB EmployeesAW">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -3868,15 +4831,25 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Load EmailAddressesAW\Destination - EmailAddressesAW">
+    design-time-name="Package\Load EmpSales_txt and EmpNotSales_txt\Lookup - EmailAddressesAW">
     <Properties>
       <Property>
-        <Name>DataSourceViewID</Name>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[EmailAddressesAW]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q2:string">Table</Value>
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

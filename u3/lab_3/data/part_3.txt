@@ -1,3 +1,0 @@
-EmployeeID,FirstName,LastName,JobTitle,EmailAddress,City,StateProvinceName,CountryRegionName
-5,Aleksey,Khaletskiy,God,,Washington,WA,US
-6,Random,Cat,Cat,,Washington,WA,US

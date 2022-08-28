@@ -1,0 +1,15 @@
+FirstName,LastName,JobTitle,EmailAddress
+Michael,Blythe,Sales Representative,michael9@adventure-works.com
+Linda,Mitchell,Sales Representative,linda3@adventure-works.com
+Jillian,Carson,Sales Representative,jillian0@adventure-works.com
+Garrett,Vargas,Sales Representative,garrett1@adventure-works.com
+Tsvi,Reiter,Sales Representative,tsvi0@adventure-works.com
+Pamela,Ansman-Wolfe,Sales Representative,pamela0@adventure-works.com
+Shu,Ito,Sales Representative,shu0@adventure-works.com
+Jose,Saraiva,Sales Representative,jose1@adventure-works.com
+David,Campbell,Sales Representative,david8@adventure-works.com
+Tete,Mensa-Annan,Sales Representative,tete0@adventure-works.com
+Lynn,Tsoflias,Sales Representative,lynn0@adventure-works.com
+Rachel,Valdez,Sales Representative,rachel0@adventure-works.com
+Jae,Pak,Sales Representative,jae0@adventure-works.com
+Ranjit,Varkey Chudukatil,Sales Representative,ranjit0@adventure-works.com
