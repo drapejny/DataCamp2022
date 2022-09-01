@@ -12,11 +12,35 @@
   DTS:LocaleID="8192"
   DTS:MaxErrorCount="0"
   DTS:ObjectName="loading_currency"
-  DTS:VersionBuild="37"
-  DTS:VersionGUID="{6D68810D-52BA-4325-883E-81C0DEB80FA5}">
+  DTS:VersionBuild="38"
+  DTS:VersionGUID="{5EDE84F7-5545-4FB4-AB8F-FF42F2929F1F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-8VB5NE5.AdventureWorks2019]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{49820491-721E-4BCE-A879-18BBD4005DE9}"
+      DTS:ObjectName="DESKTOP-8VB5NE5.AdventureWorks2019">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-8VB5NE5;Initial Catalog=AdventureWorks2019;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-loading_currency-{49820491-721E-4BCE-A879-18BBD4005DE9}DESKTOP-8VB5NE5.AdventureWorks2019;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-8VB5NE5.Slizh]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{A1B8B40B-FBBD-4DC2-A32D-697C81FB6A87}"
+      DTS:ObjectName="DESKTOP-8VB5NE5.Slizh">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-8VB5NE5;Initial Catalog=Slizh;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-loading_currency-{A1B8B40B-FBBD-4DC2-A32D-697C81FB6A87}DESKTOP-8VB5NE5.Slizh;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[DESKTOP-T6EFTML.AdventureWorks2019]"
       DTS:CreationName="OLEDB"
@@ -56,7 +80,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1251"
-          DTS:ConnectionString="D:\DataMola\Labs\DataCamp2022\u3\lab_1\result\Currency.txt">
+          DTS:ConnectionString="C:\Users\Ann Slizh\Desktop\DataCamp2022\u3\lab_1\result\Currency.txt">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -65,7 +89,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="CurrencyCode"
-              DTS:DTSID="{06A62E9A-65A8-4529-8683-FA58AAB03B33}"
+              DTS:DTSID="{5E24219A-E20F-43B9-94B0-A80359BD5346}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -74,7 +98,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="Name"
-              DTS:DTSID="{CDC7C875-6E86-4DA0-B8DB-BDE87E062930}"
+              DTS:DTSID="{1A4BBC3B-0D43-46A8-968F-C3BAF08E0429}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -108,7 +132,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{D3892B5E-6A58-46F6-9081-8192601D7050}"
+          SQLTask:Connection="{A1B8B40B-FBBD-4DC2-A32D-697C81FB6A87}"
           SQLTask:SqlStatementSource="IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='Currency' and xtype='u')&#xA; CREATE TABLE [dbo].[Currency] (&#xA;  [CurrencyCode] nvarchar(3) NOT NULL,&#xA;  [Name] nvarchar(50) NOT NULL&#xA; )&#xA;GO&#xA;TRUNCATE TABLE [dbo].[Currency]&#xA;GO&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -294,8 +318,8 @@
               <connections>
                 <connection
                   refId="Package\Load from Currency_txt\Destination - Currency.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-T6EFTML.Slizh]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-T6EFTML.Slizh]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-8VB5NE5.Slizh]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-8VB5NE5.Slizh]"
                   description="Соединение OLE DB среды выполнения, используемое для доступа к базе данных."
                   name="OleDbConnection" />
               </connections>
@@ -375,7 +399,7 @@
                 <property
                   dataType="System.Boolean"
                   description="Указывает, считается ли, что столбцы нулевой длины имеют значение NULL."
-                  name="RetainNulls">false</property>
+                  name="RetainNulls">true</property>
                 <property
                   dataType="System.String"
                   description="Указывает имя файла выходного столбца, содержащего имя файла. Если не указано имя, выходной столбец, содержащий имя файла, не будет сформирован."
@@ -630,8 +654,8 @@
               <connections>
                 <connection
                   refId="Package\Load to Currency_txt\Source - Currency.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[SourceConnectionOLEDB]"
-                  connectionManagerRefId="Package.ConnectionManagers[SourceConnectionOLEDB]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-8VB5NE5.AdventureWorks2019]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-8VB5NE5.AdventureWorks2019]"
                   description="Соединение OLE DB среды выполнения, используемое для доступа к базе данных."
                   name="OleDbConnection" />
               </connections>
@@ -830,21 +854,21 @@
         <NodeLayout
           Size="179.2,41.6"
           Id="Package\Load from Currency_txt\Data Conversion 0 - 0"
-          TopLeft="6.70000000000003,107.1" />
+          TopLeft="6.70000000000006,107.1" />
         <EdgeLayout
           Id="Package\Load from Currency_txt.Paths[Выходные данные преобразования данных]"
           TopLeft="96.3,148.7">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,59.9999999999999"
+              EndConnector="0,60"
               Start="0,0"
-              End="0,52.4999999999999">
+              End="0,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.4999999999999" />
+                    End="0,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -859,14 +883,14 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,59.9999999999999"
+              EndConnector="0,60"
               Start="0,0"
-              End="0,52.4999999999999">
+              End="0,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.4999999999999" />
+                    End="0,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
